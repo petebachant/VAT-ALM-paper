@@ -46,6 +46,7 @@ This new ALM contains some features that have not been implemented in others:
 * Reynolds number corrections for static foil data.
 * Turbulence model scalar sources based on element loading.
 * A generalized end effects model.
+* A flow curvature effects model for high-solidity CFTs.
 * The ability to place any type of actuator line object anywhere in the flow, e.g., to represent nearby support structures.
 * Inclusion in standard OpenFOAM solvers, e.g. `simpleFoam` and `pimpleFoam`, which allows for both RANS and LES turbulence modeling.
 * Modeling both axial- and cross-flow turbines with similar underlying software objects, allowing both types of turbines in the same simulation.
@@ -53,3 +54,13 @@ This new ALM contains some features that have not been implemented in others:
 
 This paper describes the development of the model and presents results regarding
 its effectiveness.
+
+We start out with a list of test cases in order to validate the model from the
+ground up:
+
+1. A single airfoil in steady flow -- To validate angle of attack detection and end effects modeling
+2. A harmonically pitching foil in steady flow -- To verify implementation of dynamic stall models and detection of unsteady angle of attack
+3. A standalone axial-flow turbine -- To validate performance and wake predictions for a relativaly steady flow case in rotor context
+4. A standalone low-solidity cross-flow turbine
+5. A standalone high-solidity cross-flow turbine -- Probably the most difficult due to the inclusion of flow curvature effects
+6. A pair of CFTs, to test the ability to model turbine wake interaction and hence array performance. 
