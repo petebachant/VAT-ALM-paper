@@ -60,7 +60,7 @@ ground up:
 
 1. A single airfoil in steady flow -- To validate angle of attack detection and end effects modeling
 2. A harmonically pitching foil in steady flow -- To verify implementation of dynamic stall models and detection of unsteady angle of attack
-3. A standalone axial-flow turbine -- To validate performance and wake predictions for a relativaly steady flow case in rotor context
+3. A standalone axial-flow turbine -- To validate performance and wake predictions for a relatively steady flow case in rotor context
 4. A standalone low-solidity cross-flow turbine
 5. A standalone high-solidity cross-flow turbine -- Probably the most difficult due to the inclusion of flow curvature effects
-6. A pair of CFTs, to test the ability to model turbine wake interaction and hence array performance. 
+6. A pair of CFTs, to test the ability to model turbine wake interaction and hence array performance.
