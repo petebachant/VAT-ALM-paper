@@ -14,7 +14,8 @@ figs:
 
 
 bib:
-	python scripts/getbib.py
+	git submodule update library
+	cp library/Library.bib library.bib
 
 
 zip:
