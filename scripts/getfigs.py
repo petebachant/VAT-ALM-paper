@@ -34,32 +34,8 @@ figdirs = {"RVAT-baseline": join(expdir, "RVAT baseline", "Figures"),
                                "End effects", "figures"),
            "RM2-tow-tank": join(expdir, "RM2 tow tank", "Figures")}
 
-figlists = {"RVAT-baseline": ["perf.pdf", "meancontquiv.pdf", "kcont.pdf",
-                              "meanu_2tsrs.pdf", "meanv_2tsrs.pdf",
-                              "meanw_2tsrs.pdf", "xvorticitycont.pdf",
-                              "meanupvpcont.pdf", "meanupwpcont.pdf",
-                              "mean_vel_vs_tsr.pdf", "multispec.pdf",
-                              "mombargraph.pdf", "Kbargraph.pdf",
-                              "Kturbtranscont.pdf", "fpeak_vcont.pdf",
-                              "fstrength_vcont.pdf", "k_2tsrs.pdf"],
-            "RVAT-Re-dep": ["cp_curves.pdf", "cd_curves.pdf",
-                            "perf_re_dep.pdf", "meancontquiv_10.pdf",
-                            "k_contours_10.pdf", "mean_u_k_profiles.pdf",
-                            "wake_spectra.pdf", "mom_bar_graph.pdf",
-                            "K_trans_bar_graph.pdf", "wake_trans_totals.pdf"],
-            "AD": ["streamwise.pdf", "meancontquiv.pdf"],
+figlists = {"RVAT-baseline": ["meancontquiv.pdf", "kcont.pdf"],
             "CFT-vectors": ["cft-vectors.pdf", "alpha_deg_urel_geom.pdf"],
-            "NACAXX20-XFOIL": ["all_foils_re_dep.pdf",
-                               "foil_kinematics_ct.pdf",
-                               "cft_re_dep_foils.pdf"],
-            "BR-CFD": ["CAD.pdf", "2D_blade_mesh_closeup.png", "2D_mesh.png",
-                       "2D_vorticity_SA_964.png",
-                       "3D_vorticity_SA_964_10-threshold.png",
-                       "kcont_kOmegaSST.pdf", "kcont_SpalartAllmaras.pdf",
-                       "meancontquiv_kOmegaSST.pdf",
-                       "meancontquiv_SpalartAllmaras.pdf", "mom_bar_graph.pdf",
-                       "perf_bar_chart.pdf", "profiles.pdf",
-                       "verification.pdf"],
             "RVAT-ALM": ["verification.pdf", "wake-profiles.pdf",
                          "perf-curves.pdf", "meancontquiv.pdf", "kcont.pdf",
                          "recovery-bar-chart.pdf"],
@@ -70,9 +46,11 @@ figlists = {"RVAT-baseline": ["perf.pdf", "meancontquiv.pdf", "kcont.pdf",
                              "kcont.pdf", "recovery-bar-chart.pdf",
                              "vorticity-snapshot.png"],
             "end-effects": ["rvat-20-deg.pdf"],
-            "RM2-tow-tank": ["cp_curves.pdf", "cd_curves.pdf",
-                             "perf_re_dep.pdf", "perf_covers.pdf",
-                             "no_blades_all.pdf", "meancontquiv.pdf", "k_contours.pdf", "K_trans_bar_graph.pdf"]}
+            "RM2-tow-tank": ["meancontquiv.pdf", "k_contours.pdf"]}
+
+
+if not os.path.isdir("figure"):
+    os.mkdir("figures")
 
 
 for name, figlist in figlists.items():
