@@ -22,7 +22,7 @@ figs:
 
 
 bib:
-	git submodule update --remote library
+	cd library && git pull origin master
 	cp library/Library.bib library.bib
 
 
