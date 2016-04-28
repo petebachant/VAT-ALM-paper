@@ -6,6 +6,7 @@ paper:
 
 clean:
 	latexmk -c paper.tex
+	rm paper.bbl
 
 
 view: paper
