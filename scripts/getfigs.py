@@ -49,7 +49,7 @@ figlists = {"RVAT-baseline": ["meancontquiv.pdf", "kcont.pdf"],
             "RM2-tow-tank": ["meancontquiv.pdf", "k_contours.pdf"]}
 
 
-if not os.path.isdir("figure"):
+if not os.path.isdir("figures"):
     os.mkdir("figures")
 
 
