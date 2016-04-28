@@ -32,7 +32,8 @@ figdirs = {"RVAT-baseline": join(expdir, "RVAT baseline", "Figures"),
                                 "figures"),
            "end-effects": join(gdrive, "Research", "OpenFOAM", "turbinesFoam",
                                "End effects", "figures"),
-           "RM2-tow-tank": join(expdir, "RM2 tow tank", "Figures")}
+           "RM2-tow-tank": join(expdir, "RM2 tow tank", "Figures"),
+           "thesis": join(gdrive, "Research", "PhD thesis", "figures")}
 
 figlists = {"RVAT-baseline": ["meancontquiv.pdf", "kcont.pdf"],
             "CFT-vectors": ["cft-vectors.pdf", "alpha_deg_urel_geom.pdf"],
@@ -46,7 +47,8 @@ figlists = {"RVAT-baseline": ["meancontquiv.pdf", "kcont.pdf"],
                              "kcont.pdf", "recovery-bar-chart.pdf",
                              "vorticity-snapshot.png"],
             "end-effects": ["rvat-20-deg.pdf"],
-            "RM2-tow-tank": ["meancontquiv.pdf", "k_contours.pdf"]}
+            "RM2-tow-tank": ["meancontquiv.pdf", "k_contours.pdf"],
+            "thesis": ["alm-geometry.pdf", "alm-mesh.png"]}
 
 
 if not os.path.isdir("figures"):
