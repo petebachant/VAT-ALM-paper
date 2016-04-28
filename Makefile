@@ -4,6 +4,10 @@ paper:
 	latexmk -pdf paper.tex
 
 
+clean:
+	latexmk -c paper.tex
+
+
 view: paper
 ifeq ($(shell uname -s),MINGW64_NT-10.0)
 	start "" paper.pdf
