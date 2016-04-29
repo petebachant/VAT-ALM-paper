@@ -75,10 +75,35 @@ stall; lifting line}
 
 \section{Introduction}
 
-Despite its apparent---but not completely certain---effectiveness for predicting
-the performance and wake of a single turbine, blade-resolved CFD presents a huge
-computational expense since it must resolve fine details of the blade boundary
-layers, and must be performed in three dimensions, which will preclude its use
+Vertical-axis (cross-flow) turbines (VATs or CFTs) were the subject of
+significant research and development in the 1970s through the 1990s by groups
+like Sandia National Labs in the US~\cite{Sutherland2012} and the National
+Research Council of Canada~\cite{Para2002}. Despite minor commercial success for
+large scale onshore wind applications, vertical-axis turbines were virtually
+abandoned in favor of horizontal-axis (or axial-flow) turbines, as they
+generally are more efficient and don't encounter the high levels of fatigue
+loading that VATs do. Today, however, there is renewed interest in VATs for
+marine hydrokinetic (MHK) applications~\cite{ORPC2012}, urban
+wind~\cite{Awan2013}, and smaller scale, tightly spaced wind
+farms~\cite{Dabiri2011, Kinzel2012}, thanks to their relatively faster wake
+recovery.
+
+The mean near-wake structure of vertical-axis turbine has been shown to be
+largely dominated by the effects of tip vortex shedding, which induces levels of
+recovery due to vertical advection significantly larger than those from
+turbulent fluctuations~\cite{Bachant2015-JoT}---an effect not seen in HAT wakes.
+As interest shifts to designing and analyzing arrays of VATs, it is necessary to
+determine the effectiveness of various numerical modeling techniques to
+replicate VAT near-wake dynamics, such that wake recovery is accurately
+predicted, leading to accurate assessment of optimal array spacing.
+
+Reynolds-averaged Navier--Stokes (RANS) turbulence models computed on 3-D
+body-fitted (blade-resolved) grids can do a good job predicting the mean
+performance and near-wake structure of a VAT, though their effectiveness depends
+on the turbulence model applied~\cite{Bachant2016-BR-CFD}. However, 3-D
+blade-resolved RANS presents a huge computational expense---on the order of
+1,000 CPU hours per simulated second with contemporary hardware---since it must
+resolve fine details of the blade boundary layers, which will preclude its use
 for array analysis until the availability of computing power increases
 sufficiently. It is therefore necessary to explore simpler models that can
 predict the turbine loading and flow field with acceptable fidelity, but that
@@ -89,10 +114,11 @@ Very fast solution times can be obtained with blade element momentum (BEM)
 models, such as the double multiple streamtube (DMST) approached developed by
 Paraschivoiu~\cite{Para1988}. However, their poor performance for high solidity
 (or chord-to-radius ratio $c/R$) turbines \cite{Joo2015}, makes them less
-attractive, particular for marine hydrokinetic applications. Their description
-of the flow field is very crude as well, simply computing the momemtum contained
-within discretized streamtubes, which cannot resolve any of the complicated flow
-structures shed by the rotor.
+attractive, particular for marine hydrokinetic applications, where rotors of the
+same size will encounter approximately an order of magnitude higher torque
+compared to wind turbines. Their description of the flow field is very crude as
+well, simply computing the momemtum contained within discretized streamtubes,
+which cannot resolve any of the complicated flow structures shed by the rotor.
 
 Blade element based vortex line methods can be solved with reasonable
 computational effort---ranging from an expense close to BEM up to that of 2-D
