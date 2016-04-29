@@ -88,10 +88,11 @@ individual devices.
 Very fast solution times can be obtained with blade element momentum (BEM)
 models, such as the double multiple streamtube (DMST) approached developed by
 Paraschivoiu~\cite{Para1988}. However, their poor performance for high solidity
-turbines \cite{Joo2015}, makes them less attractive, particular for marine
-hydrokinetic applications. Their description of the flow field is very crude as
-well, simply computing the momemtum contained within discretized streamtubes,
-which cannot resolve any of the complicated flow structures shed by the rotor.
+(or chord-to-radius ratio $c/R$) turbines \cite{Joo2015}, makes them less
+attractive, particular for marine hydrokinetic applications. Their description
+of the flow field is very crude as well, simply computing the momemtum contained
+within discretized streamtubes, which cannot resolve any of the complicated flow
+structures shed by the rotor.
 
 Blade element based vortex line methods can be solved with reasonable
 computational effort---ranging from an expense close to BEM up to that of 2-D
@@ -124,7 +125,7 @@ shown in blind tests to be competitive with blade-resolved
 CFD~\cite{Krogstad2013, Pierella2014}. The ALM combined with large eddy
 simulation has become the state-of-the-art for modeling entire wind
 farms~\cite{Archer2013, Churchfield2012, Sorensen2015, Fleming2013,
-    Fleming2014}. Like other blade element techniques, the effectiveness of the ALM
+Fleming2014}. Like other blade element techniques, the effectiveness of the ALM
 for AFTs is in part due to the quasi-steady nature of the flow in the blade
 reference frame, and the relatively rare occurrence of stall.
 
@@ -143,6 +144,35 @@ and LES simulations, implemented as an extension for the OpenFOAM open-source
 CFD library.
 
 
+\section{Turbines}
+
+Two turbines were modeled: the high solidity ($c/R=0.28$) UNH Reference
+Vertical-Axis Turbine (UNH-RVAT) and the medium solidity ($c/R=0.07$--$0.12$) US
+Department of Energy/Sandia National Labs Reference Model 2 (RM2) cross-flow
+turbine (at 1:6 scale), both of which are shown in Figure~\ref{fig:turbines}.
+Both rotors are of similar geometric size ($\sim 1$ m) and are constructed from
+symmetrical NACA foils mounted at mid-chord and mid-span.
+
+Open datasets for the performance and near-wake dynamics of the UNH-RVAT and
+RM2, available from \cite{Bachant2014-RVAT-baseline,Bachant2016-RVAT-Re-dep} and
+\cite{Bachant2016-RM2-data}, respectively. have been acquired in the UNH towing
+tank at Reynolds numbers based on turbine diameter $Re_D = 10^6$. Analysis of
+these datasets showed that turbine performance and near-wake characteristics
+were nearly Reynolds number independent in this
+regime~\cite{Bachant2016-Energies,Bachant2016-RM2-paper}.
+
+\begin{figure}
+    \centering
+
+    \includegraphics[width=0.6\textwidth]{turbines}
+
+    \caption{Drawings of the turbines used in this study: the UNH-RVAT (left)
+    and DOE/SNL RM2 (right).}
+
+    \label{fig:turbines}
+\end{figure}
+
+
 \section{Theory}
 
 The actuator line model is based on the classical blade element theory combined
@@ -150,7 +180,45 @@ with a Navier--Stokes description of the flow field. The ALM treats turbine
 blades as lines of blade elements, for which 2-D profile lift and drag
 coefficients are given. For each blade element, relative flow velocity and angle
 of attack are computed by adding the vectors of relative blade motion and the
-local fluid velocity. The blade lift and drag forces are calculated as
+local fluid velocity, a diagram of which is shown in Figure~\ref{fig:vectors}.
+
+\begin{figure}
+    \centering
+
+    \includegraphics[clip, trim=1in 1.5in 1in 0.5in,
+    width=0.4\textwidth]{figures/CFT-vectors_cft-vectors}
+
+    \caption{Vector diagram of velocity and forcing on a cross-flow turbine
+    blade element. Note that the free stream flow is from top to bottom, the
+    blade chord is in line with the tangential velocity (i.e., zero preset
+    pitch), and the drag vector is magnified by a factor of two (approximately,
+    relative to the lift vector) to enhance visibility.}
+
+    \label{fig:vectors}
+\end{figure}
+
+The kinematics of a CFT are parameterized by the tip speed ratio $\lambda =
+\omega R/U_\infty$, where $\omega$ is the shaft's angular velocity, $R$ is the
+maximum rotor radius, and $U_\infty$ is the free stream velocity. Using only
+geometric considerations---that is, ignoring the effect of the rotor forcing and
+assuming the inflow velocity to be equal to that of the free stream---the
+geometric angle of attack $\alpha$ and relative velocity magnitude
+$|\vec{U}_{\mathrm{rel}}|$ can be calculated as a function of the rotor azimuthal
+angle $\theta$, which is plotted for various tip speed ratios in
+Figure~\ref{fig:geom-alpha-urel}.
+
+\begin{figure}
+    \centering
+
+    \includegraphics[width=0.75\textwidth]{CFT-vectors_alpha_deg_urel_geom}
+
+    \caption{Geometric angle of attack (left) and relative velocity (right)
+        versus azimuthal angle at various tip speed ratios.}
+
+    \label{fig:geom-alpha-urel}
+\end{figure}
+
+The blade lift and drag forces are calculated as
 \begin{equation}
     F_l = \frac{1}{2} \rho A_\mathrm{elem} C_l |\vec{U}_\mathrm{rel}|^2,
 \end{equation}
@@ -196,7 +264,7 @@ points.
 \begin{figure}
     \centering
 
-    \includegraphics[width=0.9\textwidth]{thesis_alm-geometry}
+    \includegraphics[width=0.7\textwidth]{thesis_alm-geometry}
 
     \caption{Actuator line geometry. Filled circles indicate geometry points
         whereas squares indicate actuator line element locations.}
@@ -287,12 +355,11 @@ quarter chord location:
 
 Troldborg~\cite{Troldborg2008} proposed that the Gaussian width should be set to
 twice the local cell length $\Delta x$ in order to maintain numerical stability.
-
-Jha et al.~\cite{Jha2014} provides guidelines for choosing a projection
-width.
-
 Schito and Zasso \cite{Schito2014} found that a projection $\epsilon$ equal to
-the local mesh length was optimal.
+the local mesh length was optimal. Jha et al.~\cite{Jha2014} investigated the
+ideal projection width for HAWT blades, recommending an equivalent elliptic
+planform be constructed and used to calculate a spanwise $\epsilon$
+distribution.
 
 Martinez-Tossas and Meneveau \cite{Martinez-Tossas2015b} used a 2-D potential
 flow analysis to determine that the optimal projection width for a lifting
@@ -608,7 +675,7 @@ cross-flow rotor parameters.
 \begin{figure}
     \centering
 
-    \includegraphics[width=0.75\textwidth]{end-effects_rvat-20-deg}
+    \includegraphics[width=0.65\textwidth]{end-effects_rvat-20-deg}
 
     \caption{End effect correction function values for the Glauert and lifting
         line methods using UNH-RVAT parameters at 20 degrees tip angle of attack and
