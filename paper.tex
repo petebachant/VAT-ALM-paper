@@ -134,16 +134,16 @@ It is therefore desirable to retain a Navier--Stokes description of the flow
 field and use an actuator-type model for parameterizing the turbine loading,
 which dramatically drives down computational expense by removing the need for
 complicated meshes with many fine cells to resolve the boundary layers near the
-blade surfaces. As shown in Chapter~\ref{chap:RVAT-baseline}, the conventional
-uniform actuator disk is not a good candidate for a cross-flow turbine wake
-generator, never mind the fact that it does not typically compute performance
-predictions. There are then two actuator methods that use blade element theory
-to compute blade loading and therefore generate a wake that more closely
-resembles that of an actual turbine. These are the actuator cylinder or
-swept-surface model (ASSM) and the actuator line model (ALM). The ASSM solves
-for the average blade loading along its path and applies this as a constant body
-force term in the momentum equation. The ALM takes a similar approach but is an
-unsteady method, resolving the blade element locations in time.
+blade surfaces. As shown in \cite{Bachant2015-JoT}, the conventional uniform
+actuator disk is not a good candidate for a cross-flow turbine wake generator,
+never mind the fact that it does not typically compute performance predictions.
+There are then two actuator methods that use blade element theory to compute
+blade loading and therefore generate a wake that more closely resembles that of
+an actual turbine. These are the actuator cylinder or swept-surface model (ASSM)
+and the actuator line model (ALM). The ASSM solves for the average blade loading
+along its path and applies this as a constant body force term in the momentum
+equation. The ALM takes a similar approach but is an unsteady method, resolving
+the blade element locations in time.
 
 The ALM, originally developed by Sorensen and Shen \cite{Sorensen2002}, has
 become popular for modeling axial-flow or horizontal-axis turbines, and has been
@@ -786,15 +786,15 @@ modeled using the ALM inside a Reynolds-averaged Navier--Stokes (RANS)
 simulation, closed with the standard $k$--$\epsilon$ turbulence model. These
 rotors provide diverse parameters, which helped evaluate the robustness of the
 ALM. The simulations were performed inside a domain similar in size to that used
-in Chapter~\ref{chap:CFD} to mimic the tow tank experiments (3.66 m wide, 2.44 m
-tall, 1.52 m upstream and 2.16 m downstream), with similar velocity boundary
-conditions: 1 m/s inflow, no-slip (fixed to 1 m/s) walls and bottom, and a rigid
-slip condition for the top, to approximate some effects of the tow tank's free
-surface. Simulations were run for a total of 6 seconds, with the latter half
-used to calculate performance and wake statistics. Pressure--velocity coupling
-for the momentum equation was achieved using the PISO (pressure implicit
-splitting of operators) method. A slice of the mesh in the $x$--$y$ plane is
-shown in Figure~\ref{fig:ALM-mesh}.
+in \cite{Bachant2016-BR-CFD} to mimic the tow tank experiments (3.66 m wide,
+2.44 m tall, 1.52 m upstream and 2.16 m downstream), with similar velocity
+boundary conditions: 1 m/s inflow, no-slip (fixed to 1 m/s) walls and bottom,
+and a rigid slip condition for the top, to approximate some effects of the tow
+tank's free surface. Simulations were run for a total of 6 seconds, with the
+latter half used to calculate performance and wake statistics.
+Pressure--velocity coupling for the momentum equation was achieved using the
+PISO (pressure implicit splitting of operators) method. A slice of the mesh in
+the $x$--$y$ plane is shown in Figure~\ref{fig:ALM-mesh}.
 
 \begin{figure}
     \centering
@@ -833,15 +833,15 @@ separation in the corners of the blade--strut connections.
 Since the ALM is intended to be an engineering tool when coupled with RANS, it
 was assumed that information about tip speed ratio due to control details---that
 is, sinusoidally oscillating $\lambda$---would not be known a priori, and was
-excluded, unlike the 3-D blade-resolved cases in Chapter~\ref{chap:CFD}. Note
-that a systematic investigation of the effects of sinusoidal $\lambda$ was not
-undertaken, but for the UNH-RVAT a one to two percentage point increase in $C_P$
-was observed when running with similar parameters as the blade-resolved
-simulation.
+excluded, unlike the 3-D blade-resolved cases reported in
+\cite{Bachant2016-BR-CFD}. Note that a systematic investigation of the effects
+of sinusoidal $\lambda$ was not undertaken, but for the UNH-RVAT a one to two
+percentage point increase in $C_P$ was observed when running with similar
+parameters as the blade-resolved simulation.
 
 Compared to 3-D blade-resolved RANS, the ALM can solve a standalone turbine case
-on the order of CPU minutes per second of simulated time versus 1,000 CPU hours
-per second---a savings of 4 orders of magnitude.
+on the order of 0.1 CPU hours per second of simulated time versus 1,000 CPU
+hours per second---a savings of 4 orders of magnitude.
 
 
 \subsection{Verification}
@@ -851,7 +851,7 @@ performed for both the UNH-RVAT and RM2 RANS cases at their optimal tip speed
 rations, the results from which are plotted in
 Figure~\ref{fig:RVAT-ALM-verification} and
 Figure~\ref{fig:RM2-ALM-verification}, respectively. Similar to the verification
-strategy employed in Chapter~\ref{chap:CFD}, the mesh topology was kept
+strategy employed in \cite{Bachant2016-BR-CFD}, the mesh topology was kept
 constant, and the resolution was scaled proportional to the number of cells in
 the $x$-direction $N_x$ for the base hexahedral mesh. Both models displayed low
 sensitivity to the number of time steps per revolution. Spatial grid dependence,
@@ -898,12 +898,13 @@ stall was being modeled accurately, but $C_P$ was overpredicted at high
 $\lambda$. This may have been caused by the omission of additional parasitic
 drag sources such as roughness from exposed bolt heads located far enough from
 the axis to have a large effect at high rotation rates, or an underestimation of
-the blade--strut connection corner drag coefficient. In Chapter~\ref{chap:RM2}
-we showed how these losses can be significant even with carefully smoothed
-struts and strut-blade connections. Overprediction of performance at high tip
-speed ratio could also be a consequence of the Leishman--Beddoes dynamic stall
-model, which can also be seen in the Darrieus VAWT momentum model results shown
-in Figure 6.70 of \cite{Para2002}.
+the blade--strut connection corner drag coefficient. In
+\cite{Rawlings2008,Bachant2016-RM2-paper} it was shown how these losses can be
+significant even with carefully smoothed struts and strut-blade connections.
+Overprediction of performance at high tip speed ratio could also be a
+consequence of the Leishman--Beddoes dynamic stall model, which can also be seen
+in the Darrieus VAWT momentum model results shown in Figure 6.70 of
+\cite{Para2002}.
 
 \begin{figure}
     \centering
@@ -974,24 +975,24 @@ the rotor.
     \label{fig:RVAT-ALM-profiles}
 \end{figure}
 
-Weighted averages for the momentum recovery terms were computed identically as
-they were in Chapter~\ref{chap:CFD}, and are plotted in
-Figure~\ref{fig:RVAT-ALM-recovery} along with the actuator disk (AD) results
-from Chapter~\ref{chap:RVAT-baseline}, 3-D blade-resolved RANS results from
-Chapter~\ref{chap:CFD} and experiments. The most glaring discrepancy is the
-ALM's prediction of positive cross-stream advection, which is caused by the lack
-of detail in the tip vortex shedding. The total for vertical advection, however,
-is close to that predicted by the 3-D blade-resolved Spalart--Allmaras model.
-Levels of turbulent transport due to eddy viscosity and deceleration due to the
-adverse pressure gradient are between those predicted by the 3-D blade-resolved
-$k$--$\omega$ SST and SA models. Overall, however, one might expect the total
-wake recovery rate to be comparable between all models except the actuator disk,
-which induces negative vertical advection, very little turbulent transport, and
-has a positive pressure gradient contribution. These results suggests the ALM
-would be an effective tool---much better than an actuator disk---for assessing
-downstream spacing of subsequent CFTs, though blade--vortex interaction for very
-tightly spaced rotors may not be captured, at least on relatively coarse meshes
-as used here.
+Weighted averages for the terms in the streamwise momentum equation were
+computed identically as they were in \cite{Bachant2015-JoT,Bachant2016-BR-CFD},
+and are plotted in Figure~\ref{fig:RVAT-ALM-recovery} along with the actuator
+disk (AD) results from \cite{Bachant2015-JoT}, 3-D blade-resolved RANS results
+from \cite{Bachant2016-BR-CFD} and experiments. The most glaring discrepancy is
+the ALM's prediction of positive cross-stream advection, which is caused by the
+lack of detail in the tip vortex shedding. The total for vertical advection,
+however, is close to that predicted by the 3-D blade-resolved Spalart--Allmaras
+model. Levels of turbulent transport due to eddy viscosity and deceleration due
+to the adverse pressure gradient are between those predicted by the 3-D
+blade-resolved $k$--$\omega$ SST and SA models. Overall, however, one might
+expect the total wake recovery rate to be comparable between all models except
+the actuator disk, which induces negative vertical advection, very little
+turbulent transport, and has a positive pressure gradient contribution. These
+results suggests the ALM would be an effective tool---much better than an
+actuator disk---for assessing downstream spacing of subsequent CFTs, though
+blade--vortex interaction for very tightly spaced rotors may not be captured, at
+least on relatively coarse meshes as used here.
 
 \begin{figure}
     \centering
@@ -999,10 +1000,10 @@ as used here.
     \includegraphics[width=0.7\textwidth]{RVAT-ALM_recovery-bar-chart}
 
     \caption{Weighted average momentum recovery terms for the actuator disk (AD)
-    simulation from Chapter~\ref{chap:RVAT-baseline}, UNH-RVAT actuator line
-    model with a $k$--$\epsilon$ RANS closure, the two 3-D blade resolved RANS
-    models described in Chapter~\ref{chap:CFD}, and the experiments in
-    Chapter~\ref{chap:RVAT-baseline}.}
+        simulation from \cite{Bachant2015-JoT}, UNH-RVAT actuator line model with a
+        $k$--$\epsilon$ RANS closure, the two 3-D blade resolved RANS models
+        described in \cite{Bachant2016-BR-CFD}, and the experiments reported in
+        \cite{Bachant2015-JoT}.}
 
     \label{fig:RVAT-ALM-recovery}
 \end{figure}
@@ -1104,7 +1105,7 @@ transport due to the eddy viscosity was also relatively large.
 
     \caption{Weighted average momentum recovery terms at $x/D=0.93$ for the RM2
         actuator line model with a $k$--$\epsilon$ RANS closure and the experiments
-        described in Chapter~\ref{chap:RM2}.}
+        described in \cite{Bachant2016-RM2-paper}.}
 
     \label{fig:RM2-ALM-recovery}
 \end{figure}
@@ -1130,7 +1131,7 @@ in the literature. Default Smagorinsky model coefficients were used, LES filter
 width was set as the cube root of the local cell volume. The tip speed ratio was
 set to oscillate sinusoidally about $\lambda_0$ with a 0.19 magnitude and the
 angle of the first peak at 1.4 radians---similar to the rotation presribed in
-the blade-resolved RANS simulations discussed in Chapter~\ref{chap:CFD}.
+the blade-resolved RANS simulations discussed in \cite{Bachant2016-BR-CFD}.
 
 Since the computational cost of LES is significantly higher than RANS,
 verification with respect to grid dependence was not performed. Instead, mesh
@@ -1400,11 +1401,10 @@ otherwise nonuniform flows \cite{Forbush2015}.
 
 Since turbinesFoam is compatible with OpenFOAM's volume of fluid (VOF)
 multiphase flow solver interFoam, the ALM's effectiveness should be assessed for
-predicting the generation and interaction of turbines with surface waves. The
-ADV positioning system developed in Chapter~\ref{chap:exp-setup} could be
-retrofitted with a wave staff to measure and validate the free surface
-disturbance, which could be key to predicting the effects of placing turbines in
-channels at high blockage ratio.
+predicting the generation and interaction of turbines with surface waves. Tow
+tank experiments could be performed with a wave gauge to measure and validate
+the free surface disturbance, which could be key to predicting the effects of
+placing turbines in channels at high blockage ratio.
 
 Possibly most importantly, the ALM should be validated with far-wake velocity
 measurements and/or performance data from two CFTs operating in proximity of
