@@ -157,7 +157,11 @@ simulation has become the state-of-the-art for modeling entire wind
 farms~\cite{Archer2013, Churchfield2012, Sorensen2015, Fleming2013,
 Fleming2014}. Like other blade element techniques, the effectiveness of the ALM
 for AFTs is in part due to the quasi-steady nature of the flow in the blade
-reference frame, and the relatively rare occurrence of stall.
+reference frame, and the relatively rare occurrence of stall. Note that a
+similar method can be used with the Navier--Stokes equations in
+vorticity--velocity form~\cite{Scheurich2011b}, which may be more efficient when
+vorticity is confined to a relatively small fraction of the domain, e.g., for a
+standalone turbine with a uniform laminar inflow.
 
 The ASSM and ALM were implemented to model a very low Reynolds number 2-D
 cross-flow turbine experiment in a flume using large eddy simulation
