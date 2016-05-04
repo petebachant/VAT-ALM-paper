@@ -379,9 +379,10 @@ more information about the flow. Sorensen and Shen used an actuator line
 element's position to determine the inflow velocity for an axial-flow turbine
 \cite{Sorensen2002}. Similarly, Shamsoddin and Porte-Agel use the velocity at a
 blade element's location in their actuator line simulation of a vertical-axis
-turbine using LES \cite{Shamsoddin2014}. NREL's SOWFA ALM for OpenFOAM also uses
-the velocity at the actuator line element location for computing inflow velocity
-and local angle of attack with no corrections \cite{Churchfield2013}.
+turbine using LES \cite{Shamsoddin2014}. The US National Renewable Energy
+Laboratory (NREL) SOWFA ALM for OpenFOAM also uses the velocity at the actuator
+line element location for computing inflow velocity and local angle of attack
+with no corrections \cite{Churchfield2013}.
 
 Schito and Zasso developed an effective velocity model (EVM) for computing
 actuator forces in Navier--Stokes simulations \cite{Schito2014}. Their EVM
@@ -783,20 +784,20 @@ cross-flow rotor parameters.
 
 \section{Software implementation}
 
-The US National Renewable Energy Laboratory (NREL) has developed and released an
-actuator line modeling library, SOWFA~\cite{Churchfield2014b}, for simulating
-horizontal-axis wind turbine arrays using the OpenFOAM finite volume CFD
-library. OpenFOAM is free, open-source, widely used throughout industry and
-academia, and has grown a very active support community around itself
-\cite{Bachant2015-CFD-online}. Though SOWFA is also open-source, and has the
-ability to be coupled to NREL's FAST HAWT BEM code, its mostly procedural style
-would have required significant effort and duplicate code to adapt for
-cross-flow turbines. Thus, a new and more general ALM library was developed from
-the ground up that could model both cross- and axial-flow turbines, as well as
-standalone actuator lines. The actuator line model developed here, dubbed
-turbinesFoam \cite{Bachant2016-turbinesFoam-v0.0.7}, was also written as an
-extension library for OpenFOAM, and was developed freely and openly from its
-inception in order to increase community engagement and research efficiency.
+NREL has developed and released an actuator line modeling library,
+SOWFA~\cite{Churchfield2014b}, for simulating horizontal-axis wind turbine
+arrays using the OpenFOAM finite volume CFD library. OpenFOAM is free,
+open-source, widely used throughout industry and academia, and has grown a very
+active support community around itself \cite{Bachant2015-CFD-online}. Though
+SOWFA is also open-source, and has the ability to be coupled to NREL's FAST HAWT
+BEM code, its mostly procedural style would have required significant effort and
+duplicate code to adapt for cross-flow turbines. Thus, a new and more general
+ALM library was developed from the ground up that could model both cross- and
+axial-flow turbines, as well as standalone actuator lines. The actuator line
+model developed here, dubbed turbinesFoam
+\cite{Bachant2016-turbinesFoam-v0.0.7}, was also written as an extension library
+for OpenFOAM, and was developed freely and openly from its inception in order to
+increase community engagement and research efficiency.
 
 turbinesFoam was written in OpenFOAM's style, using OpenFOAM's
 \texttt{fvOptions} framework for adding source terms to equations at
