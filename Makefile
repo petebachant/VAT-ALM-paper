@@ -32,3 +32,7 @@ bib:
 
 zip:
 	python scripts/zip.py
+
+
+novelty:
+	pandoc novelty.md -o novelty.pdf
