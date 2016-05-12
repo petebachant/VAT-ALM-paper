@@ -1,18 +1,22 @@
 ## Makefile for VAT-ALM paper
 ##
 
-paper.pdf:
+## paper:           Build PDF of paper
+.PHONY: paper
+paper:
 	latexmk -pdf paper.tex
 
 
+## clean:           Use latexmk to clean files
 .PHONY: clean
 clean:
 	latexmk -c paper.tex
 	rm paper.bbl
 
 
+## view:            View paper.pdf
 .PHONY: view
-view: paper.pdf
+view: paper
 ifeq ($(shell uname -s),MINGW64_NT-10.0)
 	start "" paper.pdf
 else
@@ -20,8 +24,9 @@ else
 endif
 
 
-## cover-letter/cover-letter.pdf: Build cover letter PDF
-cover-letter/cover-letter.pdf:
+## cover-letter:    Build cover letter PDF
+.PHONY: cover-letter
+cover-letter:
 	cd cover-letter && pandoc --template=template-letter.tex cover-letter.md -o cover-letter.pdf
 
 
@@ -45,7 +50,7 @@ zip:
 
 
 ## novelty.pdf:     Build novelty file PDF
-novelty.pdf:
+novelty.pdf: novelty.md
 	pandoc novelty.md -o novelty.pdf
 
 
