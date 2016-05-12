@@ -31,8 +31,9 @@ figs:
 	python scripts/getfigs.py
 
 
-## library.bib:     Update BibTeX database
-library.bib:
+## bib:             Update BibTeX database
+.PHONY: bib
+bib:
 	cd library && git pull origin master
 	cp library/Library.bib library.bib
 
