@@ -54,6 +54,14 @@ novelty.pdf: novelty.md
 	pandoc novelty.md -o novelty.pdf
 
 
+## word-count:      Count words in PDF
+.PHONY: word-count
+word-count:
+	@pdftotext paper.pdf
+	@wc -w paper.txt
+	@rm paper.txt
+
+
 .PHONY: help
 help: Makefile
 	@sed -n "s/^##//p" $<
