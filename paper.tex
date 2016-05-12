@@ -742,23 +742,7 @@ be used outside the turbine context to ensure it produces the correct forcing,
 without adding the complexity of rotation, other actuator lines, etc. that would
 be present in a turbine rotor. The very same actuator line objects can be used
 in both axial-flow and cross-flow rotors, without having to copy code from one
-to the other. In contrast, the actuator line model in SOWFA uses a single
-software object to represent an entire array of turbines, which necessitates
-iterating through many nested lists down to the element level, which can be
-confusing to read.
-
-OpenFOAM's data structures are designed to be inherently parallel via message
-passing interface (MPI). By working within the library infrastructure the ALM
-code was easily parallelized, which will facilitate its deployment on high
-performance computing clusters for large flow simulations.
-
-Since all applications are run from a command line and all input data is text
-based, automation and integration with other tools is relatively
-straightforward. Future enhancements could include coupling with software for
-generating static foil data, e.g., XFOIL~\cite{Drela1989} or other OpenFOAM
-solvers, turbine controller models, structural analysis codes, and optimization
-tools, e.g., SNL's DAKOTA \cite{AdamsBaumanBohnhoffEtAl2009} or
-OpenMDAO~\cite{Gray2010}, for both individual turbines and array layouts.
+to the other.
 
 
 \section{Results}
