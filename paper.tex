@@ -692,25 +692,11 @@ for OpenFOAM, and was developed freely and openly from its inception in order to
 increase community engagement and research efficiency.
 
 turbinesFoam was written in OpenFOAM's style, using OpenFOAM's
-\texttt{fvOptions} framework for adding source terms to equations at
-runtime---see Listing~\ref{lst:fvOptions} for an example implementation within
-the Navier--Stokes' momentum equation. Using the \texttt{fvOptions} framework
-allows the CFT-ALM to be added to many of the solvers included in OpenFOAM,
-meaning it can be readily used with RANS or LES, multiphase models (e.g., for
-simulating the free surface in MHK installations), and even with heat transfer.
-This is in contrast to SOWFA's implementation, which requires custom flow
-solvers to be developed and maintained.
-
-\begin{lstlisting}[float,language=C++,caption=Adding source terms to the momentum equation in OpenFOAM.,label=lst:fvOptions]
-    tmp<fvVectorMatrix> UEqn
-    (
-        fvm::ddt(U)
-        + fvm::div(phi, U)
-        + turbulence->divDevReff(U)
-        ==
-        fvOptions(U)
-    );
-\end{lstlisting}
+\texttt{fvOptions} framework for adding source terms to equations at runtime.
+This implementation allows the CFT-ALM to be added to many of the standard
+solvers included in OpenFOAM without modification, i.e., it can be readily used
+with RANS or LES, multiphase models (e.g., for simulating the free surface in
+MHK installations), and even with heat transfer.
 
 OpenFOAM and turbinesFoam are written in the C++ programming language, which
 follows the object oriented programming paradigm. This characteristic helped
