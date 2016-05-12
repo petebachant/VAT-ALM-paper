@@ -564,12 +564,10 @@ angle of attack distributions due to their circular paths---producing so-called
 flow curvature effects~\cite{Migliore1980}. This makes it difficult to define a
 single angle of attack for use in the static coefficient lookup tables.
 Furthermore, this effect is more pronounced for high solidity ($c/R$) turbines.
-Two different flow curvature corrections were considered: one derived in Goude
-\cite{Goude2012} and one by Mandal and Burton \cite{Mandal1994}.
 
-The Goude correction is derived by considering a flat plat moving along a
-circular path in potential flow, for which the effective angle of attack
-including flow curvature effects is given by
+The flow curvature correction used here was derived in Goude \cite{Goude2012} by
+considering a flat plat moving along a circular path in potential flow, for
+which the effective angle of attack including flow curvature effects is given by
 \begin{equation}
     \alpha = \delta + \arctan \frac{V_\mathrm{abs} \cos(\theta_b -
         \beta)}{V_\mathrm{abs} \sin(\theta_b - \beta) + \Omega R} - \frac{\Omega
@@ -595,35 +593,6 @@ turbine, this correction effectively offsets the angle of attack, which
 therefore increases its magnitude on the upstream half of the blade path, and
 decreases its magnitude on the downstream half, where the angle of attack is
 negative.
-
-The Mandal--Burton flow curvature correction assumes that since the blade is
-encountering a curvilinear flow, it can be treated as having virtual camber.
-They introduce a factor to describe the variation of angle of attack from the
-leading to trailing edge
-\begin{equation}
-    \Delta \alpha = \alpha_\mathrm{TE} - \alpha_\mathrm{LE},
-    \label{eq:Mandal-Burton-alpha-diff}
-\end{equation}
-where TE and LE subscripts denote the values of angle of attack at the trailing
-and leading edge, respectively. Calculating these values for an actuator line
-element can be done by tracking the leading and trailing edge locations and
-velocities, then performing the same vector arithmetic used to calculate the
-quarter-chord angle of attack.
-
-An incidence correction factor
-\begin{equation}
-    \alpha_c = \arctan \left( \frac{1 - \cos (\Delta \alpha / 2)}{\sin (\Delta
-        \alpha / 2)} \right)
-    \label{eq:Mandal-Burton-alpha-corr}
-\end{equation}
-is introduced and added to the uncorrected angle of attack. Like the Goude
-model, $\alpha_c$ is positive on the upstream half of the turbine rotation and
-negative on the downstream half.
-
-It was determined that the Goude model performed best with respect to matching
-the near-wake characteristics measured in the experiments, while the performance
-predictions from both flow curvature models were relatively close to each other.
-Thus, the Goude model was used for all simulations reported here.
 
 
 \section{End effects}
