@@ -490,44 +490,16 @@ which a drop in lift and large nose-down pitching moment occurs as the vortex is
 advected downstream. As the angle of attack drops below the critical value, flow
 reattaches, closing the so-called hysteresis loop. Dynamic stall has been shown
 to be a significant positive contributor to performance in CFTs \cite{Para2002,
-    Urbina2013}, therefore an accurate model is key.
+Urbina2013}, therefore an accurate model is key.
 
-DS models were first developed to improve predictive capability for helicopter
-rotors, on which DS has significant effects on maneuverability and operational
-envelope \cite{Bousman2000}. A summary of dynamic stall models developed for
-helicopter rotors is presented in \cite{Leishman2006}. The simplest dynamic
-stall models rely on semi-empirical correlations, e.g., the Gormont model
-\cite{Gormont1973}, developed at the Boeing--Vertol Company. Several variants of
-the Gormont model were developed for vertical-axis wind turbines, with varying
-degrees of success; a summary is presented in \cite{Para2002}.
-
-Leishman and Beddoes (LB) \cite{Leishman1989} developed a semi-empirical model
-for unsteady aerodynamics and dynamic stall, which is derived from the
-phenomenology of the physics instead rather than pure empiricism. Beddoes then
-updated the model to the so-called third generation or ``3G'' version
-\cite{Beddoes1993}. The LB DS models can be summarized conceptually based on the
-following principles:
-\begin{itemize}
-    \item Dynamic conditions cause a time lag in effective angle of attack and
-    lift force.
-
-    \item Separation is determined by the Kirchoff flow approximation, which is
-    also used to parameterize the normal force coefficient table based on the
-    trailing edge separation point. This separation point also encounters a time
-    lag.
-
-    \item The separation initiates a vortex shedding cycle that causes an
-    overshoot and subsequent undershoot in lift before returning to an attached
-    flow condition.
-\end{itemize}
-
-Sheng et al. \cite{Sheng2008} developed an LB DS model variant targeted at low
-Mach numbers. This model, along with the original and 3G LB DS model variants,
-was tested for its effectiveness in cross-flow turbine conditions by Dyachuk et
-al.~\cite{Dyachuk2014}, who concluded that the Sheng et al. variant results
-matched most closely with experiments. In a similar study, the Sheng et al.
-model also faired better than the Gormont model \cite{Dyachuk2015}, which
-inspired its adoption here for the ALM.
+In this study we employed a dynamic stall model developed for low mach numbers
+by Sheng et al. \cite{Sheng2008}---derived from the Leishman--Beddoes
+semi-empirical model \cite{Leishman1989}. This model, along with two other
+Leishman--Beddoes model variants, was tested for its effectiveness in cross-flow
+turbine conditions by Dyachuk et al.~\cite{Dyachuk2014}, who concluded that the
+Sheng et al. variant results matched most closely with experiments. In a similar
+study \cite{Dyachuk2015}, the Sheng et al. model also performed better than the
+Gormont model \cite{Gormont1973}, which inspired its adoption here for the ALM.
 
 Before the dynamic stall subroutine is executed, the static profile data for
 each element is interpolated linearly based on local chord Reynolds number. The
