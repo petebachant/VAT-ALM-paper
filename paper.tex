@@ -360,7 +360,7 @@ meshes will likely have a cell size on the same order as the chord length, and
 will move on the order of one cell length per time step.
 
 
-\section{Static foil coefficient data}
+\section{Static profile coefficient data}
 
 Static input foil coefficient data were taken from Sheldahl and
 Klimas~\cite{Sheldahl1981}---a popular database developed for CFTs, which
@@ -380,6 +380,11 @@ datasets were used: The lowest for $Re_c \leq 3.6 \times 10^5$ and highest $Re_c
 \geq 6.8 \times 10^5$. For each actuator line element, blade chord Reynolds
 number is computed based on the sampled inflow velocity, and the static
 coefficients are then interpolated linearly within the database.
+
+Each rotor's shaft was assumed to have a drag coefficient $C_d = 1.1$, and the
+blade support strut end element drag coefficients were set to 0.05, to
+approximate the effects of separation in the corners of the blade--strut
+connections.
 
 
 \section{Force projection}
@@ -671,12 +676,6 @@ presented here with OpenFOAM 3.0.x are available from
 \cite{Bachant2016-UNH-RVAT-turbinesFoam-v1.0.0,
 Bachant2016-RM2-turbinesFoam-v1.0.0,
 Bachant2016-UNH-RVAT-turbinesFoam-v1.0.0-LES}.
-
-The same foil coefficient data were used for all simulations---those for a NACA
-0021 as reported by Sheldahl and Klimas \cite{Sheldahl1981}. Each rotor's shaft
-was assumed to have a drag coefficient $C_d = 1.1$, and the blade support strut
-end element drag coefficients were set to 0.05, to approximate the effects of
-separation in the corners of the blade--strut connections.
 
 Since the ALM is intended to be an engineering tool when coupled with RANS, it
 was assumed that information about tip speed ratio due to control details---that
