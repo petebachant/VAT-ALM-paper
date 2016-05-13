@@ -1103,31 +1103,10 @@ further before applying the ALM LES to array analyses.
 The ALM provides a more physical flow description compared to momentum and
 potential flow vortex models, at a reasonable cost. The ALM also drastically
 reduces computational effort compared to blade-resolved CFD, while maintaining
-the unsteadiness of the wake not resolved by a conventional actuator disk.
-Furthermore, its implementation within finite volume CFD provides a convenient
-way to study turbine array siting, since effects like terrain and buildings can
-be included, as can no-slip boundary conditions and boundary layer inflow
-profiles. Since the turbinesFoam library developed here uses OpenFOAM's modular
-\texttt{fvOptions} framework, the ALM body force term can be added as-is to
-compressible or multiphase solvers, for exploring more complicated physics.
-These features would be difficult or impossible to implement in a momentum or
-vortex models.
-
-Ultimately, the ALM retains some of the disadvantages of other blade element
-methods, but is a the next logical step bridging the gap between low- and
-high-fidelity flow modeling, and has been shown to be a method worthy of further
-advancement. The prospect of using ALM simulations to drive down computational
-cost of RANS by roughly four orders of magnitude---enabling 3-D unsteady
-Navier--Stokes simulations to be performed on a typical PC---itself justifies
-further development.
-
-At contemporary levels of computing power, the ALM is a useful tool for studying
-individual turbines when HPC is not feasible---requiring similar resources as
-2-D blade-resolved RANS, but with improved performance predictions. Furthermore,
-if arrays of CFTs advance to commercial scale, the ALM combined with LES
-represents one of the highest fidelity tools available, and will improve as
-turbulence modeling improves. It is therefore expected that this tool will prove
-valuable for both the engineering and research of wind and MHK turbines.
+the unsteadiness of the wake not resolved by a conventional actuator disk. When
+combined with RANS the ALM will allow VAT array simulations on individual PCs,
+and with high performance computing and LES the ALM is one of the highest
+fidelity array modeling tools available.
 
 
 \acks The authors would like to acknowledge funding through a National Science
