@@ -218,13 +218,13 @@ regime~\cite{Bachant2016-Energies,Bachant2016-RM2-paper}.
 
 The actuator line model is based on the classical blade element theory combined
 with a Navier--Stokes description of the flow field. The ALM treats turbine
-blades as lines of blade elements, for which 2-D profile lift and drag
-coefficients are given. For each blade element, relative flow velocity
-$\vec{U}_\mathrm{rel}$ and angle of attack $\alpha$ are computed by adding the
-vectors of relative blade motion $-\omega r$, where $\omega$ is the rotor
-angular velocity and $r$ is the blade element radius, and the local inflow
-velocity $\vec{U}_\mathrm{in}$, a diagram of which is shown in
-Figure~\ref{fig:vectors}.
+blades as lines of blade or actuator line elements, defined by their
+quarter-chord location, and for which 2-D profile lift and drag coefficients are
+known. For each blade element, relative flow velocity $\vec{U}_\mathrm{rel}$ and
+angle of attack $\alpha$ are computed by adding the vectors of relative blade
+motion $-\omega r$, where $\omega$ is the rotor angular velocity and $r$ is the
+blade element radius, and the local inflow velocity $\vec{U}_\mathrm{in}$, a
+diagram of which is shown in Figure~\ref{fig:vectors}.
 
 \begin{figure}
     \centering
@@ -306,41 +306,6 @@ momentum source (per unit density, assuming incompressible flow):
     \frac{\mathrm{D} \vec{u}}{\mathrm{D} t} = - \frac{1}{\rho} \nabla p + \nu
     \nabla^2 \vec{u} + F_\mathrm{turbine}.
 \end{equation}
-
-
-\section{Blade element discretization}
-
-In the ALM, a turbine is a collection of actuator lines, which themselves are
-collections of actuator line elements (ALEs). The position of each ALE is a
-point in space indicating its quarter-chord location. The element is further
-defined by its chord direction vector, chord length, span direction vector, span
-length, and velocity vector.
-
-An actuator line is created from defined geometry points, between which ALE
-parameters are interpolated linearly. This way, an actuator line can be defined
-by fewer geometry points than element locations. For example, an AL with
-straight planform boundaries---e.g. a straight or tapered wing---only needs two
-geometry points to be fully defined. Figure~\ref{fig:AL-geom} shows and example
-schematic of a tapered actuator line with three geometry points at the
-half-chord locations and six total elements. Note that the middle geometry point
-is technically redundant, but is shown for illustrative purposes. For actuator
-lines that represent bluff bodies, e.g., shafts, the chord mount offset is set
-to 1/4, such that the element location is centered along the line of geometry
-points.
-
-\begin{figure}
-    \centering
-
-    \includegraphics[width=0.7\textwidth]{thesis_alm-geometry}
-
-    \caption{Actuator line geometry. Filled circles indicate points where
-    geometry is defined whereas squares indicate actuator line element
-    quarter-chord locations. Chord mount offset is defined as the distance from
-    an element's leading edge to each geometry point in chord lengths, which was
-    0.5 for both rotors modeled in this study.}
-
-    \label{fig:AL-geom}
-\end{figure}
 
 
 \section{Static profile coefficient data}
