@@ -677,19 +677,6 @@ presented here with OpenFOAM 3.0.x are available from
 Bachant2016-RM2-turbinesFoam-v1.0.0,
 Bachant2016-UNH-RVAT-turbinesFoam-v1.0.0-LES}.
 
-Since the ALM is intended to be an engineering tool when coupled with RANS, it
-was assumed that information about tip speed ratio due to control details---that
-is, sinusoidally oscillating $\lambda$---would not be known a priori, and was
-excluded, unlike the 3-D blade-resolved cases reported in
-\cite{Bachant2016-BR-CFD}. Note that a systematic investigation of the effects
-of sinusoidal $\lambda$ was not undertaken, but for the UNH-RVAT a one to two
-percentage point increase in $C_P$ was observed when running with similar
-parameters as the blade-resolved simulation.
-
-Compared to 3-D blade-resolved RANS, the ALM can solve a standalone turbine case
-on the order of 0.1 CPU hours per second of simulated time versus 1,000 CPU
-hours per second---a savings of 4 orders of magnitude.
-
 
 \subsection{Verification}
 
@@ -1075,8 +1062,8 @@ near-wake dynamics were essentially Reynolds number independent. When coupled to
 a $k$--$\epsilon$ RANS solver ALM simulations took $O(0.1)$ CPU hours per second
 of simulated time, while when coupled with a Smagorinsky LES model the computing
 time was $O(10)$ hours per second, which represent a four and two order of
-magnitude decrease in computational expense versus 3-D blade-resolved RANS,
-respectively.
+magnitude decrease in computational expense versus 3-D blade-resolved
+RANS~\cite{Bachant2016-BR-CFD}, respectively.
 
 The RANS ALM predicted the UNH-RVAT performance well at tip speed ratios up to
 and including that of max power coefficient. The RM2 power coefficient on the
