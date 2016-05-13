@@ -169,11 +169,11 @@ vorticity--velocity form~\cite{Scheurich2011b}, which may be more efficient when
 vorticity is confined to a relatively small fraction of the domain, e.g., for a
 standalone turbine with a uniform laminar inflow.
 
-The ASSM and ALM were implemented to model a very low Reynolds number 2-D
-cross-flow turbine experiment in a flume using large eddy simulation
-(LES)~\cite{Shamsoddin2014}. Performance predictions for this case were not
-reported, but the ALM was shown to be more effective at postdicting the wake
-characteristics measured in the experiments by Brochier et
+The ASSM and ALM were implemented to model a very low Reynolds number (based on
+rotor diameter, $Re_D \sim 10^4$) 2-D cross-flow turbine experiment in a flume
+using large eddy simulation (LES)~\cite{Shamsoddin2014}. Performance predictions
+for this case were not reported, but the ALM was shown to be more effective at
+postdicting the wake characteristics measured in the experiments by Brochier et
 al.~\cite{Brochier1986}.
 
 It is therefore proposed that an actuator line model may be the optimal
@@ -181,26 +181,15 @@ combination of high-fidelity flow modeling that includes performance
 predictions, but with reduced computational expense. Here we have developed an
 ALM for cross-flow turbines inside both RANS and LES simulations, implemented as
 an extension for the OpenFOAM open-source CFD library. This model was validated
-against experimental data for both a high \cite{Bachant2015-JoT} and a medium
-\cite{Bachant2016-RM2-paper} solidity vertical-axis turbine.
-
-
-\section{Turbines}
-
-Two turbines were modeled: the high solidity ($c/R=0.28$) UNH Reference
+against experimental data for the high solidity ($c/R=0.28$) UNH Reference
 Vertical-Axis Turbine (UNH-RVAT) and the medium solidity ($c/R=0.07$--$0.12$) US
 Department of Energy/Sandia National Labs Reference Model 2 (RM2) cross-flow
 turbine (at 1:6 scale), both of which are shown in Figure~\ref{fig:turbines}.
-Both rotors are of similar geometric size ($\sim 1$ m) and are constructed from
-symmetrical NACA foils mounted at mid-chord and mid-span.
-
-Open datasets for the performance and near-wake dynamics of the UNH-RVAT and
-RM2, available from \cite{Bachant2014-RVAT-baseline,Bachant2016-RVAT-Re-dep} and
-\cite{Bachant2016-RM2-data}, respectively. have been acquired in the UNH towing
-tank at Reynolds numbers based on turbine diameter $Re_D = 10^6$. Analysis of
-these datasets showed that turbine performance and near-wake characteristics
-were nearly Reynolds number independent in this
-regime~\cite{Bachant2016-Energies,Bachant2016-RM2-paper}.
+Validation datasets for both turbines were taken from
+\cite{Bachant2016-RVAT-Re-dep} and \cite{Bachant2016-RM2-data}, respectively.
+The turbines were modeled at $Re_D \sim 10^6$, at which experimentally measured
+performance and near-wake characteristics were nearly Reynolds number
+independent~\cite{Bachant2016-Energies,Bachant2016-RM2-paper}.
 
 \begin{figure}
     \centering
