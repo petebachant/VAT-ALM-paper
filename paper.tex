@@ -578,17 +578,12 @@ negative.
 Helmholtz's second vortex theorem states that vortex lines may not end in a
 fluid, but must either form closed loops or extend to boundaries. Consequently
 the lift distribution due to the bound vortex from foils of finite span must
-drop to zero at the tips.
-
-Glauert~\cite{Glauert1935} used Prandtl's lifting line theory \cite{Prandtl1927}
-to develop a tip loss correction factor $F$ to be applied to the local lift of
-an axial-flow rotor blade element. The Glauert correction was further refined
-for horizontal-axis wind turbines by Shen et al. \cite{Shen2005a}. Despite their
-success for the blade element analysis of axial-flow rotors, these corrections
-both depend on rotor parameters---tip speed ratio, number of blades, element
-radius, tip flow angle---that do no necessarily translate directly to the
-geometry and flow environment of a cross-flow rotor. Therefore, a more general
-end effects model was sought.
+drop to zero at the tips. One popular end effects correction was developed by
+Glauert~\cite{Glauert1935} for the blade element analysis of axial-flow rotors.
+However this correction depends on rotor parameters---tip speed ratio, number of
+blades, element radius, tip flow angle---that do no necessarily translate
+directly to the geometry and flow environment of a cross-flow rotor. Therefore,
+a more general end effects model was sought.
 
 From Prandtl's lifting line theory, the geometric angle of attack $\alpha$ of a
 foil with an arbitrary circulation distribution can be expressed as a function
@@ -613,8 +608,8 @@ distribution
     C_l(\theta) = \frac{-\Gamma (\theta)}{\frac{1}{2} c U_\infty}.
 \end{equation}
 
-We can therefore compute a correction function based on the normalized spanwise
-lift coefficient distribution
+We can therefore compute a correction function $F$ to be applied to the ALM lift
+coefficient, based on the normalized spanwise lift coefficient distribution
 \begin{equation}
     F = C_l(\theta)/C_l(\theta)_{\max},
 \end{equation}
