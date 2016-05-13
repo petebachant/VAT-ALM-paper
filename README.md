@@ -2,7 +2,9 @@
 
 Repository for the paper introducing the turbinesFoam actuator line model, which
 will be submitted to _Wind Energy_. The most recently built PDF is available
-[here](https://drive.google.com/file/d/0BwMVIAlxIxfZWVc2VzJiQUlaUDQ/view?usp=sharing).
+[here](https://drive.google.com/file/d/0BwMVIAlxIxfZWVc2VzJiQUlaUDQ/view?usp=sharing),
+and the submitted preprint is available on arXiv:
+https://arxiv.org/abs/1605.01449.
 
 
 ## Word counting (on Windows)
