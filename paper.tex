@@ -645,12 +645,12 @@ adapt for cross-flow turbines. Thus, a new and more general ALM library was
 developed from the ground up that could model both cross- and axial-flow
 turbines, as well as standalone actuator lines. The actuator line model
 developed here, dubbed turbinesFoam \cite{Bachant2016-turbinesFoam-v0.0.7}, was
-also written as an extension library for OpenFOAM, using its \texttt{fvOptions}
-framework for adding source terms to equations at runtime. This implementation
-allows the CFT-ALM to be added to many of the standard solvers included in
-OpenFOAM without modification, i.e., it can be readily used with RANS or LES,
-multiphase models (e.g., for simulating the free surface in MHK installations),
-and even with heat transfer.
+also written as an extension library for OpenFOAM (version 3.0.x), using its
+\texttt{fvOptions} framework for adding source terms to equations at runtime.
+This implementation allows the CFT-ALM to be added to many of the standard
+solvers included in OpenFOAM without modification, i.e., it can be readily used
+with RANS or LES, multiphase models (e.g., for simulating the free surface in
+MHK installations), and even with heat transfer.
 
 
 \section{Results}
