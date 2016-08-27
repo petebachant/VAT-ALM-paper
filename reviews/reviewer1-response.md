@@ -24,8 +24,6 @@ but in my opinion, it should be shortened for a journal.
 
 We agree and have shortened the introduction significantly.
 
-TODO: Shorten introduction
-
 >Page 7, Fig 3: It is taking a lot of room, perhaps you can make a smaller
 schematic
 
@@ -82,3 +80,11 @@ higher order moments such as Reynolds stress tensor components are usually more
 sensitive. Perhaps you can go more in depth with that part -- possibly compare
 your results with other experiments or CFD simulations. Besides, please try and
 overcome the relatively large discrepancies seen in figures 6 (high TSR), 9, 11.
+
+We think it is unlikely that the discrepancies seen in predicted loading are
+related to higher order statistics of the flow field, as simplier blade element
+methods, e.g., momentum and potential flow vortex methods, also often produce
+similar overpredictions at higher TSR. It should also be noted that neither the
+static nor dynamic blade element loading is computed as a function of the local
+flow unsteadiness or TKE, though this would be an interesting avenue for future
+investigation, which has never been attempted to our knowledge.
