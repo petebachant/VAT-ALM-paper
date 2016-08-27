@@ -50,5 +50,8 @@ reference experiments and if the same blockage conditions were adopted in the
 numerical implementation.
 
 
+
 >7. Pag12. Sect.9.4 "The near-wake's mean velocity field at x/D=1 is shown in
 Figure 12..." should be actually Figure 13
+
+Thank you for catching this error. The manuscript has been corrected.
