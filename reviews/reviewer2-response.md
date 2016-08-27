@@ -11,7 +11,11 @@ should be given concerning the actual value of this parameter in the case study
 numerically modelled. At the same time a comment should be given concerning the
 ALM capabilities (and/or future improvements) in terms of unsteady aerodynamics.
 
-
+We have added values for the reduced frequencies of the rotors tested here, and
+a note that the LB dynamic stall models do contain corrections for unsteady
+aerodynamics even in the absence of stall. This implies that these models should
+work better than simply using static foil data, e.g., at high TSR, where angles
+of attack do not exceed the static stall angle.
 
 >3. Pag4. Sect.4.  Is the force smoothing with the Gaussian function really
 necessary? In P.-E. Réthoré and N. N. Sørensen, A discrete force allocation
