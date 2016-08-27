@@ -3,7 +3,7 @@
 >1. Pag1. Please insert the list of Symbols since there are a lot of
 abbreviations in the text, a quick reference could be useful.
 
-
+We have updated the manuscript with a nomenclature section.
 
 >2. Pag. Pag3. Sect. 2. The parameter reduced frequency "k" is the key parameter
 for unsteadiness considerations concerning VAT: some more detailed comments

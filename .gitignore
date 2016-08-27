@@ -35,6 +35,7 @@
 # algorithms
 *.alg
 *.loa
+*.nls
 
 # amsthm
 *.thm

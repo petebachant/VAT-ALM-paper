@@ -6,6 +6,9 @@
 
 \usepackage{lineno}
 
+\usepackage{nomencl}
+\makenomenclature
+
 \usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
 
 \graphicspath{{figures/}}
@@ -70,6 +73,7 @@ stall; lifting line}
 
 \maketitle
 
+\printnomenclature
 
 \section{Introduction}
 
@@ -85,6 +89,11 @@ marine hydrokinetic (MHK) applications~\cite{ORPC2012}, offshore floating wind
 farms~\cite{Paulsen2011, Sandia2012, Dodd2014}, and smaller scale, tightly
 spaced wind farms~\cite{Dabiri2011, Kinzel2012}, thanks to their relatively
 faster wake recovery.
+
+\nomenclature{CFT}{Cross-flow turbine}
+\nomenclature{VAT}{Vertical-axis turbine}
+\nomenclature{AFT}{Axial-flow turbine}
+\nomenclature{HAT}{Horizontal-axis turbine}
 
 The mean near-wake structure of vertical-axis turbine has been shown to be
 largely dominated by the effects of tip vortex shedding, which induces levels of
@@ -110,6 +119,8 @@ predict the turbine loading and flow field with acceptable fidelity, but that
 are economical enough to not require high performance computing, at least for
 individual devices.
 
+\nomenclature{RANS}{Reynolds-averaged Navier--Stokes}
+
 For analyzing turbine arrays, it is desirable to retain a Navier--Stokes
 description of the flow field---in contrast to, e.g., momentum or potential flow
 vortex models---to capture the effects of nonlinear advection and turbulent
@@ -125,7 +136,7 @@ Actuator line modeling (ALM), originally developed by Sorensen and Shen
 and has become popular for modeling axial-flow or horizontal-axis turbines, and
 has been shown in blind tests to be competitive with blade-resolved
 CFD~\cite{Krogstad2013, Pierella2014}. The ALM combined with large eddy
-simulation has become the state-of-the-art for modeling entire wind
+simulation (LES) has become the state-of-the-art for modeling entire wind
 farms~\cite{Archer2013, Churchfield2012, Sorensen2015, Fleming2013,
 Fleming2014}. Like other blade element techniques, the effectiveness of the ALM
 for AFTs is in part due to the quasi-steady nature of the flow in the blade
@@ -135,7 +146,10 @@ vorticity--velocity form~\cite{Scheurich2011b}, which may be more efficient when
 vorticity is confined to a relatively small fraction of the domain, e.g., for a
 standalone turbine with a uniform laminar inflow.
 
-The ASSM and ALM were implemented to model a very low Reynolds number (based on
+\nomenclature{ALM}{Actuator line model}
+\nomenclature{LES}{Large eddy simulation}
+
+The ALM has been previously used to model a very low Reynolds number (based on
 rotor diameter, $Re_D \sim 10^4$) 2-D cross-flow turbine experiment in a flume
 using large eddy simulation (LES)~\cite{Shamsoddin2014}. Performance predictions
 for this case were not reported, but the ALM was shown to be more effective at
@@ -155,6 +169,12 @@ datasets for both turbines were taken from \cite{Bachant2016-RVAT-Re-dep} and
 characteristics were nearly Reynolds number
 independent~\cite{Bachant2016-Energies,Bachant2016-RM2-paper}, and two orders of
 magnitude higher than previous ALM investigations for VATs.
+
+\nomenclature{$c$}{Blade chord length}
+\nomenclature{$R$}{Maximum rotor radius}
+\nomenclature{$Re_D$}{Rotor diameter Reynolds number}
+\nomenclature{DOE}{US Department of Energy}
+\nomenclature{SNL}{Sandia National Laboratories}
 
 \begin{figure}
     \centering
@@ -180,6 +200,12 @@ motion $-\omega r$, where $\omega$ is the rotor angular velocity and $r$ is the
 blade element radius, and the local inflow velocity $\vec{U}_\mathrm{in}$, a
 diagram of which is shown in Figure~\ref{fig:vectors}.
 
+\nomenclature{$\vec{U}_\mathrm{rel}$}{Blade element local relative velocity}
+\nomenclature{$\alpha$}{Blade element angle of attack}
+\nomenclature{$\omega$}{Rotor angular velocity}
+\nomenclature{$r$}{Blade element radius}
+\nomenclature{$\vec{U}_\mathrm{in}$}{Blade element local inflow velocity}
+
 \begin{figure}
     \centering
 
@@ -197,6 +223,8 @@ diagram of which is shown in Figure~\ref{fig:vectors}.
 
     \label{fig:vectors}
 \end{figure}
+
+\nomenclature{$U_\infty$}{Free stream velocity}
 
 Inflow velocity was sampled for each actuator line element at its quarter-chord
 location using OpenFOAM's \texttt{interpolationCellPoint} class, which provides
@@ -219,6 +247,9 @@ frequency~\cite{Leishman2006}
 \end{equation}
 which assumes the free stream velocity is constant. Unsteady effects begin to
 become significant for $k > 0.05$, and can become dominant for $k \ge 0.2$.
+
+\nomenclature{$\lambda$}{Rotor tip speed ratio}
+\nomenclature{$k$}{Reduced frequency or turbulence kinetic energy}
 
 For a VAT or CFT reduced frequency can be reformulated in terms of the tip speed
 ratio as
@@ -261,6 +292,10 @@ momentum source (per unit density, assuming incompressible flow):
     \nabla^2 \vec{u} + F_\mathrm{turbine}.
 \end{equation}
 
+\nomenclature{$C_l$}{Blade element lift coefficient}
+\nomenclature{$C_d$}{Blade element drag coefficient}
+\nomenclature{$C_m$}{Blade element moment coefficient}
+
 
 \section{Static profile coefficient data}
 
@@ -273,6 +308,8 @@ flaws, this dataset is the likely most comprehensive available with respect to
 variety of profiles and ranges of Reynolds numbers. Surprisingly, considering
 the maturity and popularity of NACA foils, data remains scarce, especially for
 $Re_c \sim 10^5$.
+
+\nomenclature{$Re_c$}{Blade chord Reynolds number}
 
 NACA 0021 coefficients were used for both turbines, despite the fact that the
 UNH-RVAT is constructed from NACA 0020 foils, as a NACA 0020 dataset was not
@@ -579,6 +616,8 @@ presented here with OpenFOAM 3.0.x are available from
 Bachant2016-RM2-turbinesFoam-v1.0.0,
 Bachant2016-UNH-RVAT-turbinesFoam-v1.0.0-LES}.
 
+\nomenclature{$\epsilon$}{Gaussion force smoothing function width}
+
 
 \subsection{Verification}
 
@@ -641,6 +680,10 @@ Overprediction of performance at high tip speed ratio could also be a
 consequence of the Leishman--Beddoes dynamic stall model, which can also be seen
 in the Darrieus VAWT momentum model results shown in Figure 6.70 of
 \cite{Para2002}.
+
+\nomenclature{$C_P$}{Rotor power coefficient}
+\nomenclature{$C_D$}{Overall rotor drag (a.k.a. thrust) coefficient}
+\nomenclature{$D$}{Rotor diameter}
 
 \begin{figure}
     \centering
@@ -714,6 +757,8 @@ the rotor.
     \label{fig:RVAT-ALM-profiles}
 \end{figure}
 
+\nomenclature{$H$}{Rotor height}
+
 Weighted averages for the terms in the streamwise momentum equation were
 computed identically as they were in \cite{Bachant2015-JoT,Bachant2016-BR-CFD},
 and are plotted in Figure~\ref{fig:RVAT-ALM-recovery} along with the actuator
@@ -763,6 +808,8 @@ roughly double the default value given in~\cite{Sheng2008}. This could be
 investigated further by looking at the phase of, e.g., maximum $C_P$ peaks
 compared to the experimental values (or possibly those from blade-resolved CFD),
 but for the present study only mean values were considered.
+
+\nomenclature{$\lambda_0$}{Tip speed ratio of maximum power coefficient}
 
 \begin{figure}
     \centering
