@@ -53,17 +53,17 @@ this is not really accurate when dealing with cases with strong directional
 homogeneity and anisotropy. Why didn't you choose a dynamic Smagorinsky or even
 dynamic Lagrangian model? Besides, what is the Cs value you have used?
 
-Firstly, the $C_S$ value used was OpenFOAM's default value of approximately
-0.17. This detail has been added to the text.
-
-Secondly, we are not trying to claim that the Smagorinsky model is the most
-accurate "standard" model, but that is has been used in many other ALM papers,
-and therefore a good baseline for comparison. The wording of the text has been
+We are not trying to claim that the Smagorinsky model is the most accurate or
+"the standard" model, but that is has been used in many other ALM papers, and
+therefore a good baseline for comparison. The wording of the text has been
 adjusted to reflect the notion that we are interested in this comparison to
 baseline for turbine ALM modeling, and are by no means implying that this SGS
 model is the most accurate or appropriate for this case. Certainly testing
 additional SGS models will be part of future work, as is mentioned in the
 conclusions.
+
+The $C_S$ value used was OpenFOAM's default value of approximately 0.17. This
+detail has been added to the text.
 
 >Page 13, Fig 15: Following my last comment, figure to the right may very well
 explain that the Smagorinsly model has been over dissipative thereby hampering
