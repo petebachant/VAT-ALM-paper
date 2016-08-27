@@ -49,7 +49,10 @@ should be an opportunity for clarify if any blockage effect was present in the
 reference experiments and if the same blockage conditions were adopted in the
 numerical implementation.
 
-
+The cross-section of the domain was set equal to match blockage, though the free
+surface was not modeled. However, we did use a slip BC for the top as opposed to
+a fixed tow speed condition, to get closer to the free surface condition. We
+have added a small clarification regarding blockage matching to the text.
 
 >7. Pag12. Sect.9.4 "The near-wake's mean velocity field at x/D=1 is shown in
 Figure 12..." should be actually Figure 13
