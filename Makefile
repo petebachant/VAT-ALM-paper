@@ -62,6 +62,13 @@ word-count:
 	@rm paper.txt
 
 
+## reviews:         Build PDFs of review responses
+.PHONY: reviews
+reviews: reviews/reviewer1-response.md reviews/reviewer2-response.md
+	pandoc reviews/reviewer1-response.md -o reviews/reviewer1-response.pdf -H reviews/quote-config.tex
+	pandoc reviews/reviewer2-response.md -o reviews/reviewer2-response.pdf -H reviews/quote-config.tex
+
+
 .PHONY: help
 help: Makefile
 	@sed -n "s/^##//p" $<
