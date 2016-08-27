@@ -42,7 +42,8 @@ close to the tip.
 the turbine, and the flow direction. Figure 3 is not very effective in terms of
 quantitative information on the actual implementation of the code.
 
-
+This is a valid point. We have created a new figure to better describe the
+computational domain and dimensions.
 
 >6. Sect. 8-9 The details on the domain boundaries of the implemented case study
 should be an opportunity for clarify if any blockage effect was present in the
