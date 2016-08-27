@@ -15,24 +15,54 @@ As noted in the "Novelty" file, this work presents some results that have either
 The reviewer is correct that we had not sufficiently described this novelty in
 the paper itself, and we have updated the introduction accordingly.
 
-
 >- Minor comment: I'd rather use nondimentional units for variables such as time step
->
->Pages 1-6: Again, very good introduction and gathering of introductory note, but in my opinion, it
-should be shortened for a journal.
->
-Page 7, Fig 3: It is taking a lot of room, perhaps you can make a smaller schematic
->
-Page 9 fig 6: The Cp figure is an interesting one. But first of all, but is there a particular reason
-why you have not shown Ct next to it (it's more common this way than having Cd). Also, would it not be possible to have LES results on top of both figures 6 and 11 for the cases you have simulated?
->
-Page 11, Line 42: I'm not quite sure if what you have stated about Smagorinsky model is correct. It
-certainly is very easy to implement and gives nice results in some cases, but we are all aware of its
-deficiencies. We set a fix Cs value which means we add numerical dissipation to the whole
-computatiponal domain, but this is not really accurate when dealing with cases with strong directional
-homogeneity and anisotropy. Why didn't you choose a dynamic Smagorinsky or even dynamic Lagrangian model? Besides, what is the Cs value you have used?
->
-Page 13, Fig 15: Following my last comment, figure to the right may very well explain that the
+
+Figure 6 does use a time step that is technically nondimensional (time steps per rotor revolution).
+
+>Pages 1-6: Again, very good introduction and gathering of introductory note,
+but in my opinion, it should be shortened for a journal.
+
+We agree and have shortened the introduction significantly.
+
+TODO: Shorten introduction
+
+>Page 7, Fig 3: It is taking a lot of room, perhaps you can make a smaller
+schematic
+
+We have made this figure smaller in the manuscript, a change that may be
+retained by the typesetter.
+
+>Page 9 fig 6: The Cp figure is an interesting one. But first of all, but is
+there a particular reason why you have not shown Ct next to it (it's more common
+this way than having Cd). Also, would it not be possible to have LES results on
+top of both figures 6 and 11 for the cases you have simulated?
+
+We use the overal rotor drag coefficient nomenclature ($C_D$) since this was
+adopted by Paraschivoiu (2001). As noted, this is commonly called the thrust
+coefficient for horizontal-axis turbines. We have added a note to the manuscript
+to clarify this.
+
+We have not plotted the LES results, since we only used LES for one tip speed
+ratio, and for one turbine---it was mainly employed to assess wake predictions.
+
+>Page 11, Line 42: I'm not quite sure if what you have stated about Smagorinsky
+model is correct. It certainly is very easy to implement and gives nice results
+in some cases, but we are all aware of its deficiencies. We set a fix Cs value
+which means we add numerical dissipation to the whole computatiponal domain, but
+this is not really accurate when dealing with cases with strong directional
+homogeneity and anisotropy. Why didn't you choose a dynamic Smagorinsky or even
+dynamic Lagrangian model? Besides, what is the Cs value you have used?
+
+Firstly, the $C_S$ value used was OpenFOAM's default value of approximately
+0.17. This detail has been added to the text.
+
+Secondly, we are not trying to claim that the Smagorinsky model is the most
+accurate "standard" model, but that is has been used in many other ALM papers,
+and therefore a good baseline for comparison. The wording of the text has been
+adjusted to reflect the notion that we are interested in this comparison to
+baseline for turbine ALM modeling.
+
+>Page 13, Fig 15: Following my last comment, figure to the right may very well explain that the
 Smagorinsly model has been over dissipative thereby hampering turbulent fluctuations which may have otherwise resulted in higher TKEs.
 >
 Page 14, Line 27: Matching mean velocities is usually rather straightforward (in non-presudospectral

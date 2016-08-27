@@ -823,14 +823,14 @@ how well the ALM coupled with LES might predict wake dynamics of a higher $Re$
 
 Thus, the UNH-RVAT baseline case was simulated using the Smagorinsky LES
 turbulence model \cite{Smagorinsky1963}, which was the first of its kind, and
-serves as a good standard for LES modeling since its behavior is well-reported
-in the literature. OpenFOAM's default Smagorinsky model coefficients were used
-(giving an approximate equivalent Smagorinsky coefficient $C_S = 0.17$), and the
-LES filter width was set as the cube root of the local cell volume. The tip
-speed ratio was set to oscillate sinusoidally about $\lambda_0$ with a 0.19
-magnitude and the angle of the first peak at 1.4 radians---similar to the
-rotation presribed in the blade-resolved RANS simulations discussed in
-\cite{Bachant2016-BR-CFD}.
+serves as a good baseline for LES modeling since its behavior is well-reported
+in the literature, especially for ALM simulations. OpenFOAM's default
+Smagorinsky model coefficients were used (giving an approximate equivalent
+Smagorinsky coefficient $C_S = 0.17$), and the LES filter width was set as the
+cube root of the local cell volume. The tip speed ratio was set to oscillate
+sinusoidally about $\lambda_0$ with a 0.19 magnitude and the angle of the first
+peak at 1.4 radians---similar to the rotation presribed in the blade-resolved
+RANS simulations discussed in \cite{Bachant2016-BR-CFD}.
 
 Since the computational cost of LES is significantly higher than RANS,
 verification with respect to grid dependence was not performed. Instead, mesh
