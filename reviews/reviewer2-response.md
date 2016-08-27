@@ -1,5 +1,8 @@
 # Response to reviewer 2
 
+We thank the reviewer for his or her insightful comments, and feel that these
+have helped improve the manuscript significantly.
+
 >1. Pag1. Please insert the list of Symbols since there are a lot of
 abbreviations in the text, a quick reference could be useful.
 

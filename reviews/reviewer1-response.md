@@ -22,7 +22,8 @@ Figure 6 does use a time step that is technically nondimensional (time steps per
 >Pages 1-6: Again, very good introduction and gathering of introductory note,
 but in my opinion, it should be shortened for a journal.
 
-We agree and have shortened the introduction significantly.
+We agree and have shortened the introduction as much as possible without
+removing relevant contextual information.
 
 >Page 7, Fig 3: It is taking a lot of room, perhaps you can make a smaller
 schematic
