@@ -6,7 +6,8 @@ from subprocess import check_output
 import os
 
 # Describe version via git
-version = check_output(["git", "describe"]).strip().decode()
+version = check_output(["git", "describe", "--always",
+                        "--dirty"]).strip().decode()
 
 figures = ["figures/" + f for f in os.listdir("figures") \
            if f.endswith(".pdf") or f.endswith(".png")]
