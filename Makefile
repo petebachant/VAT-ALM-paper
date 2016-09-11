@@ -75,6 +75,12 @@ diff:
 	bash scripts/diff.sh
 
 
+## archive          Copy latest built PDF to archive directory
+.PHONY: archive
+archive: paper
+	cp paper.pdf archive/paper-$(shell git describe --always --dirty).pdf
+
+
 .PHONY: help
 help: Makefile
 	@sed -n "s/^##//p" $<
