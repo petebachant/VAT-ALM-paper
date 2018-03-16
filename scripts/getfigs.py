@@ -14,6 +14,7 @@ foamrun_ext2 = join("/media", "Data2", "OpenFOAM", "pete-2.3.x", "run")
 gdrive = join(homedir, "Google Drive")
 foamrun_30x = foamrun_23x.replace("2.3.x", "3.0.x")
 foamrun_dev_ext2 = foamrun_ext2.replace("2.3.x", "dev")
+foamrun_5 = foamrun_23x.replace("2.3.x", "5.0")
 
 
 figdirs = {"RVAT-baseline": join(expdir, "RVAT baseline", "Figures"),
@@ -26,9 +27,9 @@ figdirs = {"RVAT-baseline": join(expdir, "RVAT baseline", "Figures"),
                                   "NACAXX20_QBlade", "figures"),
            "BR-CFD": join(gdrive, "Research", "Papers", "CFT wake modeling",
                           "figures"),
-           "RVAT-ALM": join(foamrun_30x, "UNH-RVAT-turbinesFoam", "figures"),
-           "RM2-ALM": join(foamrun_30x, "RM2-turbinesFoam", "figures"),
-           "RVAT-ALM-LES": join(foamrun_dev_ext2, "UNH-RVAT-turbinesFoam",
+           "RVAT-ALM": join(foamrun_5, "unh-rvat-alm", "figures"),
+           "RM2-ALM": join(foamrun_5, "rm2-alm", "figures"),
+           "RVAT-ALM-LES": join(foamrun_5, "unh-rvat-alm-les",
                                 "figures"),
            "end-effects": join(gdrive, "Research", "OpenFOAM", "turbinesFoam",
                                "End effects", "figures"),
