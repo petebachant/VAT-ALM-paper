@@ -1,48 +1,110 @@
-% wedoc.tex V1.0, 17 June 2010
+%  LaTeX support: latex@mdpi.com
+%  In case you need support, please attach all files that are necessary for compiling as well as the log file, and specify the details of your LaTeX setup (which operating system and LaTeX version / tools you are using).
 
-\documentclass[times]{weauth}
+% You need to save the "mdpi.cls" and "mdpi.bst" files into the same folder as this template file.
 
-\usepackage{moreverb}
+%=================================================================
+\documentclass[journal,article,submit,moreauthors,pdftex,10pt,a4paper]{mdpi}
 
-\usepackage{lineno}
-
-\usepackage{nomencl}
-\makenomenclature
-
-\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+% If you would like to post an early version of this manuscript as a preprint, you may use preprint as the journal and change 'submit' to 'accept'. The document class line would be, e.g. \documentclass[preprints,article,accept,moreauthors,pdftex,10pt,a4paper]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
 
 \graphicspath{{figures/}}
 
-\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
-T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%
+%--------------------
+% Class Options:
+%--------------------
+% journal
+%----------
+% Choose between the following MDPI journals:
+% actuators, addictions, admsci, aerospace, agriculture, agronomy, algorithms, animals, antibiotics, antibodies, antioxidants, applsci, arts, asi, atmosphere, atoms, axioms, batteries, bdcc, behavsci, beverages, bioengineering, biology, biomedicines, biomimetics, biomolecules, biosensors, brainsci, buildings, carbon, cancers, catalysts, cells, ceramics, challenges, chemengineering, chemosensors, children, chromatography, cleantechnol, climate, coatings, colloids, computation, computers, condensedmatter, cosmetics, cryptography, crystals, cybersecurity, data, dentistry, designs, diagnostics, diseases, diversity, econometrics, economies, education, electrochem, electrochemistry, electronics, energies, entropy, environments, epigenomes, est, fermentation, fibers, fire, fishes, fluids, foods, forecasting, forests, fractalfract, futureinternet, galaxies, games, gastrointestdisord, gels, genealogy, genes, geosciences, geriatrics, hazardousmatters, healthcare, heritage, highthroughput, horticulturae, humanities, hydrology, informatics, information, infrastructures, inorganics, insects, instruments, ijerph, ijfs, ijms, ijgi, ijtpp, inventions, j, jcdd, jcm, jcs, jdb, jfb, jfmk, jimaging, jof, jintelligence, jlpea, jmmp, jmse, joitmc, jpm, jrfm, jsan, land, languages, laws, life, literature, logistics, lubricants, machines, magnetochemistry, make, marinedrugs, materials, mathematics, mca, mti, medsci, medicina, medicines, membranes, metabolites, metals, microarrays, micromachines, microorganisms, minerals, modelling, molbank, molecules, mps, nanomaterials, ncrna, neonatalscreening, neuroglia, nitrogen, nutrients, ohbm, particles, pathogens, pharmaceuticals, pharmaceutics, pharmacy, philosophies, photonics, plants, plasma, polymers, polysaccharides, preprints, proceedings, processes, proteomes, publications, quaternary, qubs, reactions, reactions, recycling, religions, remotesensing, reports, resources, risks, robotics, safety, scipharm, sensors, separations, sexes, sinusitis, socsci, societies, soilsystems, sports, standards, stats, surfaces, surgeries, sustainability, symmetry, systems, technologies, toxics, toxins, tropicalmed, universe, urbansci, vaccines, vehicles, vetsci, vibration, viruses, vision, water, wem
+%---------
+% article
+%---------
+% The default type of manuscript is article, but can be replaced by:
+% abstract, addendum, article, benchmark, book, bookreview, briefreport, casereport, changes, comment, commentary, communication, conceptpaper, correction, conferenceproceedings, conferencereport, expressionofconcern, meetingreport, creative, datadescriptor, discussion, editorial, essay, erratum, hypothesis, interestingimages, letter, meetingreport, newbookreceived, opinion, obituary, projectreport, reply, reprint, retraction, review, perspective, protocol, shortnote, supfile, technicalnote, viewpoint
+% supfile = supplementary materials
+% protocol: If you are preparing a "Protocol" paper, please refer to http://www.mdpi.com/journal/mps/instructions for details on its expected structure and content.
+%----------
+% submit
+%----------
+% The class option "submit" will be changed to "accept" by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g. the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
+%------------------
+% moreauthors
+%------------------
+% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. If eps figures are used, remove the option pdftex and use LaTeX and dvi2pdf.
 
-\def\volumeyear{2016}
+%=================================================================
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{xx}
+\issuenum{1}
+\articlenumber{1}
+\pubyear{2018}
+\copyrightyear{2018}
+%\externaleditor{Academic Editor: name}
+\history{
+    Preprint uploaded XXXXXX
+    Received: date;
+    Accepted: date;
+    Published: date
+}
 
-\begin{document}
+%\updates{yes} % If there is an update available, un-comment this line
 
-\runningheads{P.~Bachant \emph{et al.}}{Actuator line modeling of vertical-axis
-turbines}
+%------------------------------------------------------------------
+% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
+%\pdfoutput=1
 
-\articletype{RESEARCH ARTICLE PREPRINT (submitted May 2016; revised Sept 2016)}
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, calc, indentfirst, fancyhdr, graphicx, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, amsthm, hyphenat, natbib, hyperref, footmisc, geometry, caption, url, mdframed, tabto, soul, multirow, microtype, tikz, siunitx
 
-\title{Actuator line modeling of vertical-axis turbines}
+%=================================================================
+%% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
 
-\author{P.~Bachant\textsuperscript{1}, A.~Goude\textsuperscript{2}, and
-M.~Wosnik\textsuperscript{1}}
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{Actuator line modeling of vertical-axis turbines}
 
-\address{\textsuperscript{1}Center for Ocean Renewable Energy,
-University of New Hampshire, 24
-Colovos Rd., Durham, NH, 03824, USA \\
-\textsuperscript{2}Department of Engineering Sciences,
-Division of Electricity, Uppsala University, Uppsala 751 21, Sweden}
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorA}{0000-0003-4039-6954} % Add \orcidA{} behind the author's name
+%\newcommand{\orcidauthorB}{0000-0000-000-000X} % Add \orcidB{} behind the author's name
 
-\corraddr{P.~Bachant, Chase Ocean Engineering Laboratory, University of New
-Hampshire, 24 Colovos Rd., Durham, NH, 03824, USA. \\
-E-mail: pwbachant@gmail.com}
+% Authors, for the paper (add full first names)
+\Author{
+    Peter Bachant $^{1,\dagger,\ddagger}$\orcidA{},
+    Anders Goude $^{2,\ddagger}$
+    and Martin Wosnik $^{1,}$*
+}
 
-\linenumbers
+% Authors, for metadata in PDF
+\AuthorNames{Peter Bachant, Anders Goude and Martin Wosnik}
 
-\begin{abstract}
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+$^{1}$ \quad University of New Hampshire, USA\\
+$^{2}$ \quad Uppsala University, Sweden}
+
+% Contact information of the corresponding author
+\corres{Correspondence: pwbachant@gmail.com}
+
+% Current address and/or shared authorship
+% \firstnote{Current address: Affiliation 3}
+\secondnote{These authors contributed equally to this work.}
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+% Simple summary
+%\simplesumm{}
+
+% Abstract (Do not insert blank lines, i.e. \\)
+\abstract{
     To bridge the gap between high and low fidelity numerical modeling tools for
     vertical-axis (or cross-flow) turbines (VATs or CFTs), an actuator line
     model (ALM) was developed and validated for both a high and a medium
@@ -66,14 +128,42 @@ E-mail: pwbachant@gmail.com}
     3-D blade-resolved RANS, though vortex breakdown and subsequent turbulence
     generation appeared to be underpredicted, which necessitates further
     investigation of optimal subgrid scale modeling.
-\end{abstract}
+}
 
-\keywords{wind turbine; VAWT; cross-flow turbine; blade element theory; dynamic
+% Keywords
+\keyword{wind turbine; VAWT; cross-flow turbine; blade element theory; dynamic
 stall; lifting line}
 
-\maketitle
+% The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
+%\PACS{J0101}
+%\MSC{}
+%\JEL{}
 
-\printnomenclature
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Applied Sciences:
+%\featuredapplication{Authors are encouraged to provide a concise description of the specific application or a potential application of the work. This section is not mandatory.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Data:
+%\dataset{DOI number or link to the deposited data set in cases where the data set is published or set to be published separately. If the data set is submitted and will be published as a supplement to this paper in the journal Data, this field will be filled by the editors of the journal. In this case, please make sure to submit the data set as a supplement when entering your manuscript into our manuscript editorial system.}
+
+%\datasetlicense{license under which the data set is made available (CC0, CC-BY, CC-BY-SA, CC-BY-NC, etc.)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Toxins
+%\keycontribution{The breakthroughs or highlights of the manuscript. Authors can write one or two sentences to describe the most important part of the paper.}
+
+%\setcounter{secnumdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Only for the journal Gels: Please place the Experimental Section after the Conclusions
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%The order of the section titles is: Introduction, Materials and Methods, Results, Discussion, Conclusions for these journals: aerospace,algorithms,antibodies,antioxidants,atmosphere,axioms,biomedicines,carbon,crystals,designs,diagnostics,environments,fermentation,fluids,forests,fractalfract,informatics,information,inventions,jfmk,jrfm,lubricants,neonatalscreening,neuroglia,particles,pharmaceutics,polymers,processes,technologies,viruses,vision
+
 
 \section{Introduction}
 
@@ -90,10 +180,10 @@ farms~\cite{Paulsen2011, Sandia2012, Dodd2014}, and smaller scale, tightly
 spaced wind farms~\cite{Dabiri2011, Kinzel2012}, thanks to their relatively
 faster wake recovery.
 
-\nomenclature{CFT}{Cross-flow turbine}
-\nomenclature{VAT}{Vertical-axis turbine}
-\nomenclature{AFT}{Axial-flow turbine}
-\nomenclature{HAT}{Horizontal-axis turbine}
+% \nomenclature{CFT}{Cross-flow turbine}
+% \nomenclature{VAT}{Vertical-axis turbine}
+% \nomenclature{AFT}{Axial-flow turbine}
+% \nomenclature{HAT}{Horizontal-axis turbine}
 
 The mean near-wake structure of vertical-axis turbine has been shown to be
 largely dominated by the effects of tip vortex shedding, which induces levels of
@@ -119,7 +209,7 @@ predict the turbine loading and flow field with acceptable fidelity, but that
 are economical enough to not require high performance computing, at least for
 individual devices.
 
-\nomenclature{RANS}{Reynolds-averaged Navier--Stokes}
+% \nomenclature{RANS}{Reynolds-averaged Navier--Stokes}
 
 For analyzing turbine arrays, it is desirable to retain a Navier--Stokes
 description of the flow field---in contrast to, e.g., momentum or potential flow
@@ -146,8 +236,8 @@ vorticity--velocity form~\cite{Scheurich2011b}, which may be more efficient when
 vorticity is confined to a relatively small fraction of the domain, e.g., for a
 standalone turbine with a uniform laminar inflow.
 
-\nomenclature{ALM}{Actuator line model}
-\nomenclature{LES}{Large eddy simulation}
+% \nomenclature{ALM}{Actuator line model}
+% \nomenclature{LES}{Large eddy simulation}
 
 The ALM has been previously used to model a very low Reynolds number (based on
 rotor diameter, $Re_D \sim 10^4$) 2-D cross-flow turbine experiment in a flume
@@ -170,11 +260,11 @@ characteristics were nearly Reynolds number
 independent~\cite{Bachant2016-Energies,Bachant2016-RM2-paper}, and two orders of
 magnitude higher than previous ALM investigations for VATs.
 
-\nomenclature{$c$}{Blade chord length}
-\nomenclature{$R$}{Maximum rotor radius}
-\nomenclature{$Re_D$}{Rotor diameter Reynolds number}
-\nomenclature{DOE}{US Department of Energy}
-\nomenclature{SNL}{Sandia National Laboratories}
+% \nomenclature{$c$}{Blade chord length}
+% \nomenclature{$R$}{Maximum rotor radius}
+% \nomenclature{$Re_D$}{Rotor diameter Reynolds number}
+% \nomenclature{DOE}{US Department of Energy}
+% \nomenclature{SNL}{Sandia National Laboratories}
 
 \begin{figure}
     \centering
@@ -200,11 +290,11 @@ motion $-\omega r$, where $\omega$ is the rotor angular velocity and $r$ is the
 blade element radius, and the local inflow velocity $\vec{U}_\mathrm{in}$, a
 diagram of which is shown in Figure~\ref{fig:vectors}.
 
-\nomenclature{$\vec{U}_\mathrm{rel}$}{Blade element local relative velocity}
-\nomenclature{$\alpha$}{Blade element angle of attack}
-\nomenclature{$\omega$}{Rotor angular velocity}
-\nomenclature{$r$}{Blade element radius}
-\nomenclature{$\vec{U}_\mathrm{in}$}{Blade element local inflow velocity}
+% \nomenclature{$\vec{U}_\mathrm{rel}$}{Blade element local relative velocity}
+% \nomenclature{$\alpha$}{Blade element angle of attack}
+% \nomenclature{$\omega$}{Rotor angular velocity}
+% \nomenclature{$r$}{Blade element radius}
+% \nomenclature{$\vec{U}_\mathrm{in}$}{Blade element local inflow velocity}
 
 \begin{figure}
     \centering
@@ -224,7 +314,7 @@ diagram of which is shown in Figure~\ref{fig:vectors}.
     \label{fig:vectors}
 \end{figure}
 
-\nomenclature{$U_\infty$}{Free stream velocity}
+% \nomenclature{$U_\infty$}{Free stream velocity}
 
 Inflow velocity was sampled for each actuator line element at its quarter-chord
 location using OpenFOAM's \texttt{interpolationCellPoint} class, which provides
@@ -248,8 +338,8 @@ frequency~\cite{Leishman2006}
 which assumes the free stream velocity is constant. Unsteady effects begin to
 become significant for $k > 0.05$, and can become dominant for $k \ge 0.2$.
 
-\nomenclature{$\lambda$}{Rotor tip speed ratio}
-\nomenclature{$k$}{Reduced frequency or turbulence kinetic energy}
+% \nomenclature{$\lambda$}{Rotor tip speed ratio}
+% \nomenclature{$k$}{Reduced frequency or turbulence kinetic energy}
 
 For a VAT or CFT reduced frequency can be reformulated in terms of the tip speed
 ratio as \begin{equation} k = \frac{\lambda c}{2R}, \end{equation} which is then
@@ -290,9 +380,9 @@ momentum source (per unit density, assuming incompressible flow):
     \nabla^2 \vec{u} + F_\mathrm{turbine}.
 \end{equation}
 
-\nomenclature{$C_l$}{Blade element lift coefficient}
-\nomenclature{$C_d$}{Blade element drag coefficient}
-\nomenclature{$C_m$}{Blade element moment coefficient}
+% \nomenclature{$C_l$}{Blade element lift coefficient}
+% \nomenclature{$C_d$}{Blade element drag coefficient}
+% \nomenclature{$C_m$}{Blade element moment coefficient}
 
 
 \section{Static profile coefficient data}
@@ -307,7 +397,7 @@ variety of profiles and ranges of Reynolds numbers. Surprisingly, considering
 the maturity and popularity of NACA foils, data remains scarce, especially for
 $Re_c \sim 10^5$.
 
-\nomenclature{$Re_c$}{Blade chord Reynolds number}
+% \nomenclature{$Re_c$}{Blade chord Reynolds number}
 
 NACA 0021 coefficients were used for both turbines, despite the fact that the
 UNH-RVAT is constructed from NACA 0020 foils, as a NACA 0020 dataset was not
@@ -619,7 +709,7 @@ presented here with OpenFOAM 3.0.x are available from
 Bachant2016-RM2-turbinesFoam-v1.0.0,
 Bachant2016-UNH-RVAT-turbinesFoam-v1.0.0-LES}.
 
-\nomenclature{$\epsilon$}{Gaussion force smoothing function width}
+% \nomenclature{$\epsilon$}{Gaussion force smoothing function width}
 
 
 \subsection{Verification}
@@ -684,9 +774,9 @@ consequence of the Leishman--Beddoes dynamic stall model, which can also be seen
 in the Darrieus VAWT momentum model results shown in Figure 6.70 of
 \cite{Para2002}.
 
-\nomenclature{$C_P$}{Rotor power coefficient}
-\nomenclature{$C_D$}{Overall rotor drag (a.k.a. thrust) coefficient}
-\nomenclature{$D$}{Rotor diameter}
+% \nomenclature{$C_P$}{Rotor power coefficient}
+% \nomenclature{$C_D$}{Overall rotor drag (a.k.a. thrust) coefficient}
+% \nomenclature{$D$}{Rotor diameter}
 
 \begin{figure}
     \centering
@@ -760,7 +850,7 @@ the rotor.
     \label{fig:RVAT-ALM-profiles}
 \end{figure}
 
-\nomenclature{$H$}{Rotor height}
+% \nomenclature{$H$}{Rotor height}
 
 Weighted averages for the terms in the streamwise momentum equation were
 computed identically as they were in \cite{Bachant2015-JoT,Bachant2016-BR-CFD},
@@ -812,7 +902,7 @@ investigated further by looking at the phase of, e.g., maximum $C_P$ peaks
 compared to the experimental values (or possibly those from blade-resolved CFD),
 but for the present study only mean values were considered.
 
-\nomenclature{$\lambda_0$}{Tip speed ratio of maximum power coefficient}
+% \nomenclature{$\lambda_0$}{Tip speed ratio of maximum power coefficient}
 
 \begin{figure}
     \centering
@@ -1065,12 +1155,36 @@ fidelity array modeling tools available. Ultimately, the ALM will help reduce
 dependence on expensive physical modeling to optimize VAT array layouts.
 
 
-\acks The authors would like to acknowledge funding through a National Science
-Foundation CAREER award (principal investigator Martin Wosnik, NSF 1150797,
-Energy for Sustainability, program manager Gregory L. Rorrer). This work has
-been carried out as part of author P. Bachant's doctoral research at the
-University of New Hampshire.
+\acknowledgments{
+    The authors would like to acknowledge funding through a National Science
+    Foundation CAREER award (principal investigator Martin Wosnik, NSF 1150797,
+    Energy for Sustainability, program manager Gregory L. Rorrer). This work has
+    been carried out as part of author P. Bachant's doctoral research at the
+    University of New Hampshire.
+}
 
-\bibliographystyle{wileyj}
+\authorcontributions{
+    P.B. wrote the computer code, ran the simulations, post-processed the
+    results, and wrote the paper.
+    A.G. contributed to the computer code and the manuscript.
+    M.W. contributed to writing and editing of the manuscript.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\conflictsofinterest{The authors declare no conflicts of interest.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Citations and References in Supplementary files are permitted provided that they also appear in the reference list here.
+
+% The following MDPI journals use author-date citation: Arts, Econometrics, Economies, Genealogy, Humanities, IJFS, JRFM, Laws, Religions, Risks, Social Sciences. For those journals, please follow the formatting guidelines on http://www.mdpi.com/authors/references
+% To cite two works by the same author: \citeauthor{ref-journal-1a} (\citeyear{ref-journal-1a}, \citeyear{ref-journal-1b}). This produces: Whittaker (1967, 1975)
+% To cite two works by the same author with specific pages: \citeauthor{ref-journal-3a} (\citeyear{ref-journal-3a}, p. 328; \citeyear{ref-journal-3b}, p.475). This produces: Wong (1999, p. 328; 2000, p. 475)
+
+%=====================================
+% References, variant B: external bibliography
+%=====================================
+\externalbibliography{yes}
 \bibliography{library}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
