@@ -26,7 +26,8 @@ for fig in figures:
         if f in fig:
             figures.remove(fig)
 
-files = ["paper.tex", "paper.bbl", "weauth.cls", "wileyj.bst"]
+files = ["paper.tex", "paper.bbl", "logo-ccby.eps", "logo-mdpi.eps",
+         "logo-updates.pdf", "chicago2.bst", "mdpi.cls", "mdpi.bst"]
 
 with ZipFile("archive/paper-{}.zip".format(version), "w") as f:
     for fig in figures:
