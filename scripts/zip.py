@@ -26,11 +26,15 @@ for fig in figures:
         if f in fig:
             figures.remove(fig)
 
-files = ["paper.tex", "paper.bbl", "logo-ccby.eps", "logo-mdpi.eps",
+files = ["paper.tex", "paper.bbl", "logo-mdpi-eps-converted-to.pdf",
          "logo-updates.pdf", "chicago2.bst", "mdpi.cls", "mdpi.bst"]
 
 with ZipFile("archive/paper-{}.zip".format(version), "w") as f:
     for fig in figures:
         f.write(fig)
     for file in files:
-        f.write(file)
+        if "-eps-converted-to" in file:
+            arcname = file.replace("-eps-converted-to", "")
+        else:
+            arcname = None
+        f.write(file, arcname=arcname)
