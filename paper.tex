@@ -348,7 +348,8 @@ large scale, relatively low solidity Darrieus wind turbine such as the Sandia 34
 m diameter Test Bed, with an equatorial blade chord of 0.91 m \cite{Murray2011},
 a reduced frequency $k=0.16$ is encountered based solely on angle of attack
 oscillations at $\lambda=6$. For the two turbines studied here, reduced
-frequencies at $\lambda_0$ are 0.27 and 0.17 (based on root chord length) for
+frequencies at the tip speed ratio of peak power coefficient, $\lambda_0$,
+are 0.27 and 0.17 (based on root chord length) for
 the UNH-RVAT and RM2, respectively. Therefore, both cases will be inherently
 unsteady, with these effects dominating the UNH-RVAT's behavior. Hence, an
 accurate unsteady aerodynamics model is important to predicting blade loading.
@@ -720,18 +721,23 @@ Figure~\ref{fig:RVAT-ALM-verification} and
 Figure~\ref{fig:RM2-ALM-verification}, respectively. Similar to the verification
 strategy employed in \cite{Bachant2016-BR-CFD}, the mesh topology was kept
 constant, and the resolution was scaled proportional to the number of cells in
-the $x$-direction $N_x$ for the base hexahedral mesh. Both models displayed low
+the $x$-direction $N_x$ for the base hexahedral mesh, which was essentially
+uniform in resolution in all directions. Both models displayed low
 sensitivity to the number of time steps per revolution. Spatial grid dependence,
 however, was more important.
 
 Final spatial grid resolutions were chosen as $N_x=48$ for both the UNH-RVAT and
-RM2 cases. Time steps were chosen as $\Delta t = 0.01$ and $\Delta t = 0.005$
+RM2 cases. Time steps were chosen as $\Delta t_0 = 0.01$ and
+$\Delta t_0 = 0.005$
 seconds for the UNH-RVAT and RM2 respectively, which correspond to approximately
 200 steps per revolution. The chosen values should provide $C_P$ predictions
 within one percentage point of the true solution, which is on the order of the
 expanded uncertainty of the experimental measurements. Note that for computing
 performance curves, the number of steps per revolution was kept constant, i.e.,
-the time step was adjusted to $\Delta t = \Delta t_0 \lambda_0 / \lambda$.
+the time step was adjusted to $\Delta t = \Delta t_0 \lambda_0 / \lambda$,
+where $\lambda_0$ was the tip speed ratio roughly corresponding to peak $C_P$
+as observed in experiments, which was used for verifying the numerical
+sensitivity to spatial and temporal resolution.
 
 \begin{figure}
     \centering
@@ -914,6 +920,29 @@ but for the present study only mean values were considered.
     \label{fig:RM2-ALM-perf-curves}
 \end{figure}
 
+The internal rotor flow about the horizontal center plane, along with
+the directions and relative magnitudes of the actuator line force vectors
+are shown in Figure~\ref{fig:RM2-internal}.
+It can be seen how flow features like dynamic stall vortices are not
+captured with the ALM, despite forces themselves being modulated by the
+dynamic stall model. This combined with the diffusive nature of the
+RANS model helps explain discrepancies in predicted power coefficient.
+With the computational affordability of the ALM coupled with RANS comes a
+compromise in flow detail, which should be acceptable for array-level
+simulation, but for individual device design a blade-resolved
+simulation would be more advisable.
+
+\begin{figure}
+    \centering
+
+    \includegraphics[width=0.8\textwidth]{rm2-vel-force-6-seconds}
+
+    \caption{Velocity magnitude and actuator line force field vectors for the
+    RM2 RANS simulation at 6 seconds simulated time.}
+
+    \label{fig:RM2-internal}
+\end{figure}
+
 The mean near-wake structure for the RM2 looked qualitatively similar to the
 RVAT ALM RANS case, but for the RM2, the effects of blade tip vortex shedding
 were weaker, which is consistent with experiments~\cite{Bachant2016-RM2-paper}.
@@ -972,7 +1001,8 @@ resolution. The solver was run with a 0.002 second time step, which is
 significantly within the limit described by \cite{Martinez-Tossas2015}, where an
 actuator line element may not pass through more than one cell per time step.
 With these resolutions computation times were $O(10)$ CPU hours per second of
-simulated time, which is approximately two orders of magnitude lower than for
+simulated time (on 4 processors),
+which was approximately two orders of magnitude lower than for
 blade-resolved RANS.
 
 Mean power coefficient predictions for the UNH-RVAT at its optimal mean tip
