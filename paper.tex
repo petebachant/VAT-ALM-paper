@@ -112,8 +112,9 @@ $^{2}$ \quad Uppsala University, Sweden}
     10^6$. The ALM is a combination of classical blade element theory and
     Navier--Stokes based flow models, and in this study both $k$--$\epsilon$
     Reynolds-averaged Navier--Stokes (RANS) and Smagorinsky large eddy
-    simulation (LES) turbulence models were tested. The RANS models were able to
-    be run on coarse grids while still providing good convergence behavior in
+    simulation (LES) turbulence models were tested using the open-source
+    OpenFOAM computational fluid dynamics framework. The RANS models were able
+    to be run on coarse grids while still providing good convergence behavior in
     terms of the mean power coefficient, and also approximately four orders of
     magnitude reduction in computational expense compared with 3-D
     blade-resolved RANS simulations. Submodels for dynamic stall, end effects,
@@ -132,7 +133,7 @@ $^{2}$ \quad Uppsala University, Sweden}
 
 % Keywords
 \keyword{wind turbine; VAWT; cross-flow turbine; blade element theory; dynamic
-stall; lifting line}
+stall; lifting line; OpenFOAM}
 
 % The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
 %\PACS{J0101}
@@ -248,12 +249,13 @@ al.~\cite{Brochier1986}.
 
 In this study we have developed an ALM for cross-flow turbines and embedded the
 model inside LES and unsteady RANS simulations, the latter of which has not yet
-been reported in the literature. This model was validated against experimental
-data for the high solidity ($c/R=0.28$) UNH Reference Vertical-Axis Turbine
-(UNH-RVAT) and the medium solidity ($c/R=0.07$--$0.12$) US Department of
-Energy/Sandia National Labs Reference Model 2 (RM2) cross-flow turbine (at 1:6
-scale), both of which are shown in Figure~\ref{fig:turbines}. Validation
-datasets for both turbines were taken from \cite{Bachant2016-RVAT-Re-dep} and
+been reported in the literature. This model was implemented within the
+open-source OpenFOAM CFD framework and validated against experimental data for
+the high solidity ($c/R=0.28$) UNH Reference Vertical-Axis Turbine (UNH-RVAT)
+and the medium solidity ($c/R=0.07$--$0.12$) US Department of Energy/Sandia
+National Labs Reference Model 2 (RM2) cross-flow turbine (at 1:6 scale), both of
+which are shown in Figure~\ref{fig:turbines}. Validation datasets for both
+turbines were taken from \cite{Bachant2016-RVAT-Re-dep} and
 \cite{Bachant2016-RM2-data}, respectively. The turbines were modeled at $Re_D
 \sim 10^6$, at which experimentally measured performance and near-wake
 characteristics were nearly Reynolds number
