@@ -9,6 +9,8 @@ We have modified the manuscript accordingly.
 
 >line 24 reads don't shoud read do not
 
+This has been updated in the manuscript.
+
 >A list of abbreviations should be made eg. what does ALE, MHK stand for? line 114, 198
 
 >line 133 reads know should read known.
