@@ -55,16 +55,20 @@ Can you specify more details about the number of processors used? It is true tha
 
 We ran the LES simulations on 4 processors, a note that has been added to the
 paper. It was still relatively affordable compared to the blade-resolved RANS.
-We have noted a 2 order of magnitude drop in computational cost.
+We have noted a 2 order of magnitude drop in computational cost as well.
 
 >Overall LES results are poor. The predicted Cp dropped to 20% which seems to be derived from the resolution of the flow field instead of the ALM itself. While a good agreement is found for the velocity wake as seen in Fig. 13 and 15(left), the turbulent kinetic energy results show an unexpected over damping of the velocity fluctuations. The use of LES is herein motivated to achieve a better resolution of the turbulent fluctuations by explicitly resolving the large-scale flow structures, and in the present manuscript the TKE has dropped dramatically. Fig. 14 and 15 (right) show a lack of flow unsteadiness attributed by the authors to the influence of the SGS model. The spatial discretisation is not described and it may be possible that depending on it, the scheme introduced an extra damping typically used in implicit LES wherein no SGS is used. Nevertheless, the reviewer would recommend to double-check the kinetic energy results as is quite confusing that the velocity wake prediction is greatly improved while the velocity fluctuations are almost gone.
-
-One important note is that the SGS TKE is not tracked by the Smagorinsky
-model, so there will be a lack of energy there.
+>
+>For further validation, the authors may consider to plot RANS vs LES at closer distance to the turbine, e.g. x/D=0.5 and study how the turbulent kinetic energy decay is in both models, or a transversal plane showing the generation of the vortices.
 
 It is not likely that the numerical schemes are dissipating the energy, since
-all 2nd order schemes are used.
-
-TODO: Check on TKE calculation from LES model and finish this.
-
->For further validation, the authors may consider to plot RANS vs LES at closer distance to the turbine, e.g. x/D=0.5 and study how the turbulent kinetic energy decay is in both models, or a transversal plane showing the generation of the vortices.
+all 2nd order schemes are used. We went back and looked at contours of the
+resolved and SGS TKE, and interestingly, the total TKE is significantly
+increased after the transition in the grid resolution in the near-wake.
+This does imply that the vortices created by the actuator lines do remain
+artificially stable, and the grid transition helps break them down and generate
+resaonably levels of TKE. This would not be much of an issue in array
+simulations with spacings greater than a few diameters. A note has been added
+to the manuscript. We considered adding the contour plots, but the paper is
+starting to get quite long. We can include them if they will contribute to
+the understanding, however.
