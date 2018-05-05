@@ -516,7 +516,9 @@ force and moment coefficients to account for unsteadiness, which is important
 for the reduced frequencies of the rotors simulated here.
 
 Before the dynamic stall subroutine is executed, the static profile data for
-each element is interpolated linearly based on local chord Reynolds number. The
+each element is interpolated linearly based on local chord Reynolds number,
+which is calculated based on the detected inflow velocity for each actuator
+line element and the simulation's kinematic viscosity. The
 profile data characteristics---static stall angle, zero-lift drag coefficient,
 and separation point curve fit parameters---are then recomputed each time step
 such that the effects of Reynolds number on the static data are included.
@@ -660,11 +662,12 @@ SOWFA~\cite{Churchfield2014b}, for simulating horizontal-axis wind turbine
 arrays using the OpenFOAM finite volume CFD library. OpenFOAM is free,
 open-source, widely used throughout industry and academia, and has grown a very
 active support community around itself. Though SOWFA is also open-source, its
-mostly procedural style would have required significant effort and duplicate
-code to adapt for cross-flow turbines. Thus, a new and more general ALM library
-was developed from the ground up that could model both cross- and axial-flow
+architecture is focused on simulating horizontal-axis wind turbine arrays
+in the atmospheric boundary layer and would have required significant effort to
+adapt for cross-flow turbines. Thus, a new and more general ALM library
+was developed that could model both cross- and axial-flow
 turbines, as well as standalone actuator lines. The actuator line model
-developed here, dubbed turbinesFoam \cite{Bachant2018-turbinesFoam-v0.0.8}, was
+developed here, turbinesFoam \cite{Bachant2018-turbinesFoam-v0.0.8}, was
 also written as an extension library for OpenFOAM (v5.0), using its
 \texttt{fvOptions} framework for adding source terms to equations at runtime.
 This implementation allows the CFT-ALM to be added to many of the standard
