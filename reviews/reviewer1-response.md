@@ -5,6 +5,7 @@ to improve the manuscript significantly.
 
 >L. 111. Can you define lambda0?
 
+$\lambda_0$ is the TSR at which power coefficient is maximum.
 This definition has been added to the theory section of the manuscript.
 
 >Fig. 4 and 5. Can you include a line with the experimental value of Cp to appreciate how the model converges to it?
