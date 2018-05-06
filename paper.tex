@@ -429,7 +429,8 @@ connections.
 
 \section{Force projection}
 
-After the force on the ALE from the flow is calculated, it is then projected
+After the force on the actuator line element from the flow is calculated,
+it is then projected
 back onto the flow field as a source term in the momentum equation. To avoid
 instability due to steep gradients, the source term is tapered from its maximum
 value away from the element location by means of a spherical Gaussian function.
@@ -497,7 +498,7 @@ lines will encounter unsteady conditions, both in their angle of attack and
 relative velocity. These conditions necessitate the use of unsteady aerodynamic
 models to augment the static foil characteristics, both to capture the time
 resolved response of the attached flow loading and effects of flow acceleration,
-also know as added mass. Furthermore, the angles of attack encountered by a CFT
+also known as added mass. Furthermore, the angles of attack encountered by a CFT
 blade will often be high enough to encounter dynamic stall (DS). It is therefore
 necessary to model both unsteady attached and detached flow to obtain accurate
 loading predictions.
@@ -621,7 +622,7 @@ the lift distribution due to the bound vortex from foils of finite span must
 drop to zero at the tips. One popular end effects correction was developed by
 Glauert~\cite{Glauert1935} for the blade element analysis of axial-flow rotors.
 However this correction depends on rotor parameters---tip speed ratio, number of
-blades, element radius, tip flow angle---that do no necessarily translate
+blades, element radius, tip flow angle---that do not necessarily translate
 directly to the geometry and flow environment of a cross-flow rotor. Therefore,
 a more general end effects model was sought.
 
@@ -896,11 +897,14 @@ least on relatively coarse meshes as used here.
 
     \includegraphics[width=0.7\textwidth]{RVAT-ALM_recovery-bar-chart}
 
-    \caption{Weighted average momentum recovery terms for the actuator disk (AD)
-        simulation from \cite{Bachant2015-JoT}, UNH-RVAT actuator line model with a
-        $k$--$\epsilon$ RANS closure, the two 3-D blade resolved RANS models
-        described in \cite{Bachant2016-BR-CFD}, and the experiments reported in
-        \cite{Bachant2015-JoT}.}
+    \caption{
+        Weighted average momentum recovery terms for the actuator disk (AD)
+        simulation from \cite{Bachant2015-JoT}, UNH-RVAT actuator line model
+        with a $k$--$\epsilon$ RANS closure, the two 3-D blade resolved RANS
+        models described in \cite{Bachant2016-BR-CFD} ($k$--$\omega$ SST and
+        Spalart--Allmaras, SA), and the experiments reported in
+        \cite{Bachant2015-JoT}.
+    }
 
     \label{fig:RVAT-ALM-recovery}
 \end{figure}
