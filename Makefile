@@ -64,7 +64,7 @@ word-count:
 
 ## reviews:         Build PDFs of review responses
 .PHONY: reviews
-reviews: reviews/reviewer1-response.md reviews/reviewer2-response.md
+reviews: reviews/reviewer1-response.md reviews/reviewer4-response.md
 	pandoc reviews/reviewer1-response.md -o reviews/reviewer1-response.pdf -H reviews/quote-config.tex
 	pandoc reviews/reviewer4-response.md -o reviews/reviewer4-response.pdf -H reviews/quote-config.tex
 
