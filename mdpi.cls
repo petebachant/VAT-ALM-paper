@@ -1,17 +1,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %%	MDPI class for LaTeX files	 11.3.2018
 %% %%	For any information please send an e-mail to:
-%% %%		latex-support@mdpi.com (Dr. Janine Daum) 
+%% %%		latex-support@mdpi.com (Dr. Janine Daum)
 %% %%
 %% %%	Initial class provided by:
-%% %%		Stefano Mariani 
+%% %%		Stefano Mariani
 %% %%   Modified by:
-%% %%		Dietrich Rordorf 
-%% %%		Peter Harremoes 
-%% %%		Zeno Schumacher 
-%% %%		Maddalena Giulini 
-%% %%		Andres Gartmann 
-%% %%		Dr. Janine Daum 
+%% %%		Dietrich Rordorf
+%% %%		Peter Harremoes
+%% %%		Zeno Schumacher
+%% %%		Maddalena Giulini
+%% %%		Andres Gartmann
+%% %%		Dr. Janine Daum
 %% %%   Versions:
 %% %%		v1.0 before Dr. Janine Daum
 %% %%		v2.0 when Dr. Janine Daum started (March 2013)
@@ -24,7 +24,7 @@
 
 %%%% Copyright and citebox
  \AtEndDocument{\par \cright \par \vspace{12pt} \citebox}
- 
+
 %% PRELIMINARY DECLARATIONS
 \LoadClass[10pt]{article}
 \RequirePackage[T1]{fontenc}
@@ -53,7 +53,7 @@
 \RequirePackage{tikz} % For Orcid icon
 \RequirePackage{siunitx} % For leading zeros in DOI number
 
- 
+
 %% OPTIONS
 %% To choose the journal
 \DeclareOption{actuators}{\gdef\@journal{actuators}	\gdef\@doiabbr{act}	\gdef\@ISSN{2076-0825}}
@@ -272,7 +272,7 @@
 \DeclareOption{water}{\gdef\@journal{water}	\gdef\@doiabbr{w}	\gdef\@ISSN{2073-4441}}
 \DeclareOption{wem}{\gdef\@journal{wem}	\gdef\@doiabbr{}	\gdef\@ISSN{1234-4321}}
 
-\DeclareOption{journal}{\ClassWarning{mdpi}{You have not specified the journal. The first class option of the document class mdpi specifies the journal. The word journal should be replaced by one of the following journal names: actuators, addictions, admsci, aerospace, agriculture, agronomy, algorithms, animals, antibiotics, antibodies, antioxidants, applsci, arts, asi, atmosphere, atoms, axioms, batteries, bdcc, behavsci, beverages, bioengineering, biology, biomedicines, biomimetics, biomolecules, biosensors, brainsci, buildings, carbon, cancers, catalysts, cells, ceramics, challenges, chemengineering, chemosensors, children, cleantechnol, climate, coatings, colloids, computation, computers, condensedmatter, cosmetics, cryptography, crystals, cybersecurity, data, dentistry, designs, diagnostics, diseases, diversity, drones, econometrics, economies, education, electrochem, electrochemistry, electronics, energies, entropy, environments, epigenomes, est, fermentation, fibers, fire, fishes, fluids, foods, forecasting, forests, fractalfract, futureinternet, galaxies, games, gastrointestdisord, gels, genealogy, genes, geosciences, geriatrics, hazardousmatters, healthcare, heritage, highthroughput, horticulturae, humanities, hydrology, informatics, information, infrastructures, inorganics, insects, instruments, ijerph, ijfs, ijms, ijgi, ijtpp, inventions, j, jcdd, jcm, jcs, jdb, jfb, jfmk, jimaging, jof, jintelligence, jlpea, jmmp, jmse, jpm, jrfm, jsan, land, languages, laws, life, literature, logistics, lubricants, machines, magnetochemistry, make, marinedrugs, materials, mathematics, mca, medsci, medicina, medicines, membranes, metabolites, metals, microarrays, micromachines, microorganisms, minerals, modelling, molbank, molecules, mps, mti, nanomaterials, ncrna, neonatalscreening, neuroglia, nitrogen, nutrients, ohbm, particles, pathogens, pharmaceuticals, pharmaceutics, pharmacy, philosophies, photonics, plants, plasma, polymers, polysaccharides, proceedings, processes, proteomes, publications, quaternary, qubs, reactions, recycling, religions, remotesensing, reports, resources, risks, robotics, safety, scipharm, sensors, separations, sexes, sinusitis, socsci, societies, soilsystems, sports, standards, stats, surfaces, surgeries, sustainability, symmetry, systems, technologies, toxics, toxins, tropicalmed, universe, urbansci, vaccines, vehicles, vetsci, vibration, viruses, vision, water,wem}} 
+\DeclareOption{journal}{\ClassWarning{mdpi}{You have not specified the journal. The first class option of the document class mdpi specifies the journal. The word journal should be replaced by one of the following journal names: actuators, addictions, admsci, aerospace, agriculture, agronomy, algorithms, animals, antibiotics, antibodies, antioxidants, applsci, arts, asi, atmosphere, atoms, axioms, batteries, bdcc, behavsci, beverages, bioengineering, biology, biomedicines, biomimetics, biomolecules, biosensors, brainsci, buildings, carbon, cancers, catalysts, cells, ceramics, challenges, chemengineering, chemosensors, children, cleantechnol, climate, coatings, colloids, computation, computers, condensedmatter, cosmetics, cryptography, crystals, cybersecurity, data, dentistry, designs, diagnostics, diseases, diversity, drones, econometrics, economies, education, electrochem, electrochemistry, electronics, energies, entropy, environments, epigenomes, est, fermentation, fibers, fire, fishes, fluids, foods, forecasting, forests, fractalfract, futureinternet, galaxies, games, gastrointestdisord, gels, genealogy, genes, geosciences, geriatrics, hazardousmatters, healthcare, heritage, highthroughput, horticulturae, humanities, hydrology, informatics, information, infrastructures, inorganics, insects, instruments, ijerph, ijfs, ijms, ijgi, ijtpp, inventions, j, jcdd, jcm, jcs, jdb, jfb, jfmk, jimaging, jof, jintelligence, jlpea, jmmp, jmse, jpm, jrfm, jsan, land, languages, laws, life, literature, logistics, lubricants, machines, magnetochemistry, make, marinedrugs, materials, mathematics, mca, medsci, medicina, medicines, membranes, metabolites, metals, microarrays, micromachines, microorganisms, minerals, modelling, molbank, molecules, mps, mti, nanomaterials, ncrna, neonatalscreening, neuroglia, nitrogen, nutrients, ohbm, particles, pathogens, pharmaceuticals, pharmaceutics, pharmacy, philosophies, photonics, plants, plasma, polymers, polysaccharides, proceedings, processes, proteomes, publications, quaternary, qubs, reactions, recycling, religions, remotesensing, reports, resources, risks, robotics, safety, scipharm, sensors, separations, sexes, sinusitis, socsci, societies, soilsystems, sports, standards, stats, surfaces, surgeries, sustainability, symmetry, systems, technologies, toxics, toxins, tropicalmed, universe, urbansci, vaccines, vehicles, vetsci, vibration, viruses, vision, water,wem}}
 
 %% To choose the type of manuscript
 \DeclareOption{abstract}{\gdef\@arttype{Abstract}}
@@ -311,8 +311,8 @@
 \DeclareOption{reprint}{\gdef\@arttype{Reprint}}
 \DeclareOption{retraction}{\gdef\@arttype{Retraction}}
 \DeclareOption{review}{\gdef\@arttype{Review}}
-\DeclareOption{perspective}{\gdef\@arttype{Perspective}} 
-\DeclareOption{protocol}{\gdef\@arttype{Protocol}} 
+\DeclareOption{perspective}{\gdef\@arttype{Perspective}}
+\DeclareOption{protocol}{\gdef\@arttype{Protocol}}
 \DeclareOption{shortnote}{\gdef\@arttype{Short Note}}
 \DeclareOption{supfile}{\gdef\@arttype{Supfile}}
 \DeclareOption{technicalnote}{\gdef\@arttype{Technical Note}}
@@ -365,47 +365,47 @@
  \newcounter{theorem}
  \setcounter{theorem}{0}
  \newtheorem{Theorem}[theorem]{Theorem}
- 
+
  \newcounter{lemma}
  \setcounter{lemma}{0}
  \newtheorem{Lemma}[lemma]{Lemma}
- 
+
  \newcounter{corollary}
  \setcounter{corollary}{0}
  \newtheorem{Corollary}[corollary]{Corollary}
- 
+
  \newcounter{proposition}
  \setcounter{proposition}{0}
  \newtheorem{Proposition}[proposition]{Proposition}
- 
+
  \newcounter{characterization}
  \setcounter{characterization}{0}
  \newtheorem{Characterization}[characterization]{Characterization}
- 
+
  \newcounter{property}
  \setcounter{property}{0}
  \newtheorem{Property}[property]{Property}
- 
+
  \newcounter{problem}
  \setcounter{problem}{0}
  \newtheorem{Problem}[problem]{Problem}
- 
+
  \newcounter{example}
  \setcounter{example}{0}
  \newtheorem{Example}[example]{Example}
- 
+
  \newcounter{examplesanddefinitions}
  \setcounter{examplesanddefinitions}{0}
  \newtheorem{ExamplesandDefinitions}[examplesanddefinitions]{Examples and Definitions}
- 
+
  \newcounter{remark}
  \setcounter{remark}{0}
  \newtheorem{Remark}[remark]{Remark}
- 
+
  \newcounter{definition}
  \setcounter{definition}{0}
  \newtheorem{Definition}[definition]{Definition}
- 
+
  \newcounter{hypothesis}
  \setcounter{hypothesis}{0}
  \newtheorem{Hypothesis}[hypothesis]{Hypothesis}
@@ -413,7 +413,7 @@
  \newcounter{notation}
  \setcounter{notation}{0}
  \newtheorem{Notation}[notation]{Notation}
- 
+
 %%%% Hyphenation
 \RequirePackage[none]{hyphenat}
 \sloppy
@@ -478,29 +478,29 @@
 \ifthenelse{\equal{\@arttype}{Reprint} \OR \equal{\@arttype}{Book}}{
 	\RequirePackage[unicode=true,
 	bookmarksopen={true},
-	pdffitwindow=true, 
-	colorlinks=true, 
-	linkcolor=black, 
-	citecolor=black, 
-	urlcolor=black, 
-	hyperfootnotes=false, 
+	pdffitwindow=true,
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black,
+	hyperfootnotes=false,
 	pdfstartview={FitH},
 	pdfpagemode=UseNone]{hyperref}
 	}{
 	\RequirePackage[unicode=true,
 	bookmarksopen={true},
-	pdffitwindow=true, 
-	colorlinks=true, 
-	linkcolor=bluecite, 
-	citecolor=bluecite, 
-	urlcolor=bluecite, 
-	hyperfootnotes=false, 
+	pdffitwindow=true,
+	colorlinks=true,
+	linkcolor=bluecite,
+	citecolor=bluecite,
+	urlcolor=bluecite,
+	hyperfootnotes=false,
 	pdfstartview={FitH},
 	pdfpagemode= UseNone]{hyperref}
-} 
+}
 
 %% To have the possibility to change the urlcolor
-\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}} 
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}}
 
 %% Metadata
 \newcommand{\org@maketitle}{}% LATEX-Check
@@ -525,7 +525,7 @@
 %%%% URL
 \RequirePackage{url}
 \urlstyle{same}
-\g@addto@macro{\UrlBreaks}{\UrlOrds} 
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
 
 %%%% Widows & orphans
 \clubpenalty=10000
@@ -549,18 +549,18 @@
 \newcommand{\address}[2][]{\renewcommand{\firstargument}{#1}\gdef\@address{#2}}
 \newcommand{\corresfirstargument}{}
 \def\@corres{}
-\newcommand{\corres}[2][]{\renewcommand{\corresfirstargument}{#1}\gdef\@corres{#2}} 
+\newcommand{\corres}[2][]{\renewcommand{\corresfirstargument}{#1}\gdef\@corres{#2}}
 \def\@conference{}
 \newcommand{\conference}[1]{\gdef\@conference{#1}}%
 \def\@abstract{}
 \renewcommand{\abstract}[1]{\gdef\@abstract{#1}}
 \def\@externaleditor{}
 \newcommand{\externaleditor}[1]{\gdef\@externaleditor{#1}}
-\newcommand{\history}[1]{\gdef\@history{#1}} 
+\newcommand{\history}[1]{\gdef\@history{#1}}
 \def\@pacs{}
-\newcommand{\PACS}[1]{\gdef\@pacs{#1}} 
+\newcommand{\PACS}[1]{\gdef\@pacs{#1}}
 \def\@msc{}
-\newcommand{\MSC}[1]{\gdef\@msc{#1}} 
+\newcommand{\MSC}[1]{\gdef\@msc{#1}}
 \def\@jel{}
 \newcommand{\JEL}[1]{\gdef\@jel{#1}}
 \def\@keyword{}
@@ -617,10 +617,10 @@
 \definecolor{lime}{HTML}{A6CE39}
 \newcommand{\orcidicon}{%
 	\begin{tikzpicture}
-	\draw[lime, fill=lime] (0,0) 
-		circle [radius=0.16] 
+	\draw[lime, fill=lime] (0,0)
+		circle [radius=0.16]
 		node[white] {{\fontfamily{qag}\selectfont \tiny ID}};
-	\draw[white, fill=white] (-0.0625,0.095) 
+	\draw[white, fill=white] (-0.0625,0.095)
 		circle [radius=0.007];
 	\end{tikzpicture}
 	\hspace{-2mm}
@@ -744,11 +744,11 @@
   \ifthenelse{\equal{\@journal}{jcm}}{J. Clin. Med.}{}%
   \ifthenelse{\equal{\@journal}{jcs}}{J. Compos. Sci.}{}%
   \ifthenelse{\equal{\@journal}{jdb}}{J. Dev. Biol.}{}%
-  \ifthenelse{\equal{\@journal}{jfb}}{J. Funct. Biomater.}{}%   
-  \ifthenelse{\equal{\@journal}{jfmk}}{J. Funct. Morphol. Kinesiol.}{}%   
+  \ifthenelse{\equal{\@journal}{jfb}}{J. Funct. Biomater.}{}%
+  \ifthenelse{\equal{\@journal}{jfmk}}{J. Funct. Morphol. Kinesiol.}{}%
   \ifthenelse{\equal{\@journal}{jof}}{J. Fungi}{}%
   \ifthenelse{\equal{\@journal}{jimaging}}{J. Imaging}{}%
-  \ifthenelse{\equal{\@journal}{jintelligence}}{J. Intell.}{}% 
+  \ifthenelse{\equal{\@journal}{jintelligence}}{J. Intell.}{}%
   \ifthenelse{\equal{\@journal}{jlpea}}{J. Low Power Electron. Appl.}{}%
   \ifthenelse{\equal{\@journal}{jmmp}}{J. Manuf. Mater. Process.}{}%
   \ifthenelse{\equal{\@journal}{jmse}}{J. Mar. Sci. Eng.}{}%
@@ -770,7 +770,7 @@
   \ifthenelse{\equal{\@journal}{materials}}{Materials}{}%
   \ifthenelse{\equal{\@journal}{mathematics}}{Mathematics}{}%
   \ifthenelse{\equal{\@journal}{mca}}{Math. Comput. Appl.}{}%
-  \ifthenelse{\equal{\@journal}{medsci}}{Med. Sci.}{}% 
+  \ifthenelse{\equal{\@journal}{medsci}}{Med. Sci.}{}%
   \ifthenelse{\equal{\@journal}{medicina}}{Medicina}{}%
   \ifthenelse{\equal{\@journal}{medicines}}{Medicines}{}%
   \ifthenelse{\equal{\@journal}{membranes}}{Membranes}{}%
@@ -849,7 +849,7 @@
   \ifthenelse{\equal{\@journal}{water}}{Water}{}%
   \ifthenelse{\equal{\@journal}{wem}}{Wildl. Ecol. Manag.}{}%
   }
-    
+
 %%%% Header and footer on first page
 %% The plain page style needs to be redefined because with \maketitle in the article class, LaTeX applies the the plain page style automatically to the first page.
 \ifthenelse{\equal{\@journal}{preprints} %
@@ -872,14 +872,8 @@
         						\@firstpage --\pageref*{LastPage}
         						}{\@articlenumber}%
         					}
-        				\fancyfoot[R]{%
-        	 				\footnotesize%
-        					{\changeurlcolor{black}%
-        					\href{http://www.mdpi.com/journal/\@journal}%
-        					{www.mdpi.com/journal/\@journal}}%
-        					}
         				}
-     	   		}		
+     	   		}
 		}
 	}{%
 	\ifthenelse{\equal{\@arttype}{Supfile}}{
@@ -892,7 +886,7 @@
 			\fancyhead[L]{
 				\footnotesize %
 				\ifthenelse{\equal{\@status}{submit}}{%
-					Version {\@ \today} submitted to {\em\journalname}%
+					Version {\@ \today} %
 					}{%
 					{\em \journalname} %
 					{\bfseries \@pubyear}, %
@@ -914,7 +908,6 @@
 			\fancyfoot[L]{
 				\footnotesize%
  	 				\ifthenelse{\equal{\@status}{submit}}{%
-					Submitted to {\em\journalname}, %
 					pages \thepage \ -- \color{black}{\pageref*{LastPage}}%
 					}{
 					{\em \journalname}\ %
@@ -940,7 +933,7 @@
 		 	\renewcommand{\headrulewidth}{0.0pt}%
 			}
 		}%
-	}%	
+	}%
 
 %%%% Maketitle part 1: Logo, Arttype, Title, Author
 \renewcommand{\@maketitle}{
@@ -957,30 +950,6 @@
 		\ifthenelse{\equal{\@arttype}{Book}}{}{%
 			\vspace*{-1.75cm}
 			}
-		{%0
-		\ifthenelse{\equal{\@journal}{preprints}
-			\OR \equal{\@arttype}{Book}}{}{%
-				\ifthenelse{\equal{\@status}{submit}}{%	
-					\hfill \href{http://www.mdpi.com}{%
-					\includegraphics[height=1cm]{logo-mdpi}}\vspace{0.5cm}%
-					}{
-					\href{http://www.mdpi.com/journal/\@journal}{
-					\includegraphics[height=1.2cm]{\@journal-logo}}%
-					\hfill
-					\ifthenelse{\equal{\@journal}{proceedings}}{
-						\href{http://www.mdpi.com/journal/\@journal}{
-						\includegraphics[height=1.2cm]{logo-conference}
-						\hfill}
-						}{}
-					\ifthenelse{\equal{\@journal}{scipharm}}{%
-						\href{http://www.mdpi.com}{\includegraphics[height=1cm]{logo-mdpi-scipharm}}%
-						}{%
-						\href{http://www.mdpi.com}{\includegraphics[height=1cm]{logo-mdpi}}%
-						}%
-					}%
-			}%
-		\par
-		}%0
 		{%1
     		\vspace{14pt}
     		\fontsize{10}{10}\selectfont
@@ -990,7 +959,7 @@
 				}{%
 				\textit{\@arttype}%
 				}%
-			}%	
+			}%
  	   	\par%
     		}%1
     		{%2
@@ -1014,7 +983,7 @@
 \newcommand{\hang}{\hangafter=1\hangindent=\dist\noindent}
 
 %%%% Maketitle part 2
-\newcommand{\maketitlen}{ 
+\newcommand{\maketitlen}{
 \ifthenelse{\equal{\@arttype}{Book}}{\vspace{12pt}}{
 	\begin{flushleft}
 	\begin{spacing}{1.35}
@@ -1039,7 +1008,7 @@
 	}%
 	{%
 	\ifthenelse{\equal{\@firstnote}{\@empty}}{}{%
-	\hang\ifthenelse{\equal{\@conference}{\@empty}}{$\dagger$}{$\ddagger$} \tabto{\dist} \@firstnote}	
+	\hang\ifthenelse{\equal{\@conference}{\@empty}}{$\dagger$}{$\ddagger$} \tabto{\dist} \@firstnote}
 	\par
 	}%
 	{%
@@ -1082,11 +1051,6 @@
 	\ifthenelse{\equal{\@externaleditor}{\@empty}}{}{\@externaleditor}
 	\par
 	}%
-	{%
-	\ifthenelse{\equal{\@status}{submit}}{Version {\@ \today} submitted to \journalname}{\@history\hfill \ifthenelse{\equal{\@updates}{\@empty}}{}{\href{http://www.mdpi.com/\@ISSN/\@pubvolume/\@issuenum/\@articlenumber?type=check_update&version=1}{\includegraphics[height=.6cm]{logo-updates}}}}
-	\par
-	\vspace{-4pt}%
-	}%
 	\end{spacing}
 	\end{flushleft}
 }
@@ -1106,7 +1070,7 @@
 }%
 {%10
 \begingroup
-\leftskip0.2cm 
+\leftskip0.2cm
 \ifthenelse{\equal{\@simplesumm}{\@empty}}{}{
 \noindent\textbf{Simple Summary:\space}\@simplesumm
 \vspace{12pt}
@@ -1274,7 +1238,7 @@
 %
 \gdef\thesection{\@Alph\c@section}%
 \gdef\thesubsection{\@Alph\c@section.\@arabic\c@subsection}%
-%	
+%
 \titleformat {\section} [block] {\raggedright \fontsize{10}{10}\selectfont\bfseries} {%
 	\ifthenelse{\equal{\@appendixtitles}{yes}}{%
 		\ifthenelse{\equal{\@appendixsections}{multiple}}{%
@@ -1329,22 +1293,22 @@
 \setcounter{lemma}{0}
 \renewcommand{\thecorollary}{A\arabic{corollary}}
 \setcounter{corollary}{0}
-\renewcommand{\theproposition}{A\arabic{proposition}} 
-\setcounter{proposition}{0} 
+\renewcommand{\theproposition}{A\arabic{proposition}}
+\setcounter{proposition}{0}
 \renewcommand{\thecharacterization}{A\arabic{characterization}}
-\setcounter{characterization}{0} 
+\setcounter{characterization}{0}
 \renewcommand{\theproperty}{A\arabic{property}}
-\setcounter{property}{0} 
+\setcounter{property}{0}
 \renewcommand{\theproblem}{A\arabic{problem}}
-\setcounter{problem}{0} 
+\setcounter{problem}{0}
 \renewcommand{\theexample}{A\arabic{example}}
-\setcounter{example}{0} 
+\setcounter{example}{0}
 \renewcommand{\theexamplesanddefinitions}{A\arabic{examplesanddefinitions}}
-\setcounter{examplesanddefinitions}{0} 
+\setcounter{examplesanddefinitions}{0}
 \renewcommand{\theremark}{A\arabic{remark}}
-\setcounter{remark}{0} 
+\setcounter{remark}{0}
 \renewcommand{\thedefinition}{A\arabic{definition}}
-\setcounter{definition}{0} 
+\setcounter{definition}{0}
 \renewcommand{\thehypothesis}{A\arabic{hypothesis}}
 \setcounter{hypothesis}{0}
 \renewcommand{\thenotation}{A\arabic{notation}}
@@ -1369,7 +1333,7 @@
 				includefoot]{geometry}
 	}
 
-\linespread{1.13} 
+\linespread{1.13}
 \setlength{\parindent}{0.75cm}
 
 %%%% Figures and tables
@@ -1394,7 +1358,7 @@
 \floatstyle{plain}
 \restylefloat{scheme}
 
-\RequirePackage{caption} 
+\RequirePackage{caption}
 \captionsetup[figure]{position=bottom, margin=0.75cm, labelfont={bf, small, stretch=1.17}, labelsep=period, textfont={small, stretch=1.17}, aboveskip=6pt, belowskip=12pt, justification=justified}
 
 \captionsetup[scheme]{position=bottom, margin=0.75cm, labelfont={bf, small, stretch=1.17}, labelsep=period, textfont={small, stretch=1.17}, aboveskip=6pt, belowskip=12pt, justification=justified}
@@ -1429,7 +1393,7 @@
 	\renewcommand{\thetable}{S\arabic{table}}%
 	}{}%
 
-%% Link to supplementary material: www.mdpi.com/ISSN-number/volume-number/issue-number/article-number	
+%% Link to supplementary material: www.mdpi.com/ISSN-number/volume-number/issue-number/article-number
 \newcommand{\linksupplementary}[1]{\url{http://www.mdpi.com/\@ISSN/\@pubvolume/\@issuenum/\@articlenumber/#1}}
 
 %%%% Header and footer (all pages except the first)
@@ -1441,7 +1405,7 @@
 		}{%
 		\fontsize{8}{8}\selectfont%
 		\ifthenelse{\equal{\@status}{submit}}{%
-			Version {\@ \today} submitted to {\em \journalname}%
+			Version {\@ \today}%
 			}{%
 			\ifthenelse{\equal{\@arttype}{Supfile}}{%
 			{\em \journalname} {\bfseries \@pubyear}, {\em \@pubvolume}, %
@@ -1500,7 +1464,7 @@
 \renewcommand\bibname{References} % Backwards compatibility for book production
 \renewcommand\@biblabel[1]{#1.\hfill}
 \def\thebibliography#1{
-\linespread{1.44} 
+\linespread{1.44}
 \section*{\@reftitle}
 \addcontentsline{toc}{section}{References}
 \fontsize{9}{9}\selectfont
@@ -1546,13 +1510,11 @@
 		}{%
 		\vspace{12pt}
 		\noindent
-		\linespread{1.44} 
-		\fontsize{9}{9}\selectfont 
+		\linespread{1.44}
+		\fontsize{9}{9}\selectfont
 		\ifthenelse{\equal{\@status}{submit}}{
 			\noindent \copyright{} {\@ \the\year} by the \@authornum. %
-			Submitted to {\em \journalname} for %
-			possible open access publication %
-			under the terms and conditions of the Creative Commons Attribution %
+			Under the terms and conditions of the Creative Commons Attribution %
 			\ifthenelse{\equal{\@journal}{ijtpp}}{NonCommercial NoDerivatives (CC BY-NC-ND)}{(CC BY)} %
 			license %
 			\ifthenelse{\equal{\@journal}{ijtpp}}{
@@ -1595,7 +1557,7 @@
 			}
 		}
 	}
-	
+
 %BOOK%
 \newcommand{\Authorbox}[1]{\gdef\@Authorbox{#1}} %
 \newcommand{\Titlebox}[1]{\gdef\@Titlebox{#1}}%
@@ -1607,11 +1569,11 @@
 \newcommand{\firstpagebox}[1]{\gdef\@firstpagebox{#1}}
 \newcommand{\lastpagebox}[1]{\gdef\@lastpagebox{#1}} %
 
-	
+
 \newcommand{\citebox}{
 \ifthenelse{\equal{\@arttype}{Book}}{
-	\centerline{	
-		\fbox{	
+	\centerline{
+		\fbox{
 		\begin{minipage}[t][][t]{1.001\linewidth}
 		\@Authorbox{} \@Titlebox. In \textit{\@Seriestitlebox}; \@Editorbox; \@Seriesnamebox{} \@Seriesnumberbox; MDPI: Basel, Switzerland, 2017; Vol. \@Volumenumberbox, pp. \@firstpagebox{} -- \@lastpagebox.
 		\end{minipage}
